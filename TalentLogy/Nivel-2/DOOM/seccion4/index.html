@@ -1,0 +1,608 @@
+<!-- Cambio de Color al Pasar el Ratón: Selecciona varios elementos en tu página y cambia su color cuando el usuario pasa el ratón sobre ellos. Restaura el color original cuando el ratón sale del elemento. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus animi magnam perspiciatis quis alias
+        dignissimos, obcaecati numquam autem minima optio sed ea et ad sunt quasi, aspernatur dolores soluta inventore?
+    </p>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque accusamus error aperiam, asperiores a consequatur
+        architecto officiis quas porro nulla ex. Iure possimus consequuntur quam voluptates. Enim dignissimos architecto
+        iusto.</p>
+</body>
+
+<script>
+    const parrafos = document.querySelectorAll('p');
+
+    parrafos.forEach(parrafo => {
+        parrafo.addEventListener('mouseover', () => {
+            parrafo.style.color = 'red';
+        });
+
+        parrafo.addEventListener('mouseout', () => {
+            parrafo.style.color = 'black';
+        });
+    });
+</script>
+
+</html> -->
+
+
+
+
+
+
+
+
+<!-- Creación de una Lista Dinámica: Crea una lista (<ul> o <ol>) dinámicamente utilizando JavaScript. Permite que los usuarios agreguen elementos a la lista mediante un formulario. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="#">
+        <input type="text" id="input">
+        <button type="submit">Agregar</button>
+    </form>
+</body>
+
+<script>
+    const form = document.querySelector('form');
+    const input = document.querySelector('#input');
+    const ul = document.createElement('ul');
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const li = document.createElement('li');
+        li.textContent = input.value;
+        ul.appendChild(li);
+        document.body.appendChild(ul);
+        input.value = '';
+    });
+</script>
+
+</html> -->
+
+
+
+
+
+
+
+
+<!-- Eliminación de Elementos: Selecciona un conjunto de elementos y proporciona la capacidad de eliminarlos al hacer clic en un botón. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="#">
+        <ul id="list">
+            <li>Element 1 <button class="remove-btn">Eliminar</button></li>
+            <li>Element 2 <button class="remove-btn">Eliminar</button></li>
+            <li>Element 3 <button class="remove-btn">Eliminar</button></li>
+        </ul>
+    </form>
+
+    <script>
+        const removeButtons = document.querySelectorAll('.remove-btn');
+        const list = document.getElementById('list');
+
+        removeButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                button.parentNode.remove();
+            });
+        });
+    </script>
+
+</html> -->
+
+
+
+
+
+
+
+
+<!-- Desplazamiento Suave a un Elemento: Crea un menú de navegación y utiliza JavaScript para permitir un desplazamiento suave hacia la sección correspondiente al hacer clic en un enlace del menú. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+  
+<body>
+    <nav class="menu">
+        <ul>
+            <li><a href="#section1">Section 1</a></li>
+            <li><a href="#section2">Section 2</a></li>
+            <li><a href="#section3">Section 3</a></li>
+        </ul>
+    </nav>
+
+    <section id="section1">
+        <h1>Section 1</h1>
+        <p> Excepteur ex sunt aute consequat et occaecat incididunt sint qui in pariatur. Pariatur dolore enim elit ut.
+            Reprehenderit nostrud commodo aliquip minim velit fugiat aute reprehenderit occaecat laborum. Proident
+            eiusmod commodo ex fugiat officia in aliqua quis est ad elit Lorem. Labore fugiat fugiat quis sunt occaecat
+            irure proident excepteur consequat consequat. Exercitation nulla ea laboris culpa ullamco enim Lorem dolor
+            minim dolor adipisicing. Qui qui mollit est mollit consequat aliquip aliqua laborum labore consectetur.
+
+            Anim ut ad reprehenderit veniam ex esse reprehenderit do eu eiusmod veniam anim sunt sint. Laborum enim
+            voluptate exercitation pariatur esse. Cillum dolor ullamco sint elit voluptate reprehenderit velit do elit.
+            Magna incididunt sint elit commodo excepteur in quis proident ex minim quis.
+
+            Nostrud aliquip ex exercitation amet ad excepteur amet pariatur proident elit. Aliqua amet consequat mollit
+            elit duis enim ex officia veniam est eu enim. Do est reprehenderit nulla excepteur quis veniam officia
+            mollit commodo elit sunt proident amet. Ea fugiat ipsum elit sunt non reprehenderit pariatur cupidatat.
+            Magna elit reprehenderit ut anim laborum velit ad.
+
+            Velit aliqua occaecat qui in. Est velit eiusmod dolore aliquip adipisicing occaecat ea qui sint nisi sunt
+            ullamco. Irure aliquip magna nulla incididunt ullamco consectetur dolore amet.
+
+            Culpa amet nulla aliquip id tempor quis. In nulla nulla duis non et officia incididunt. Nostrud aliqua
+            tempor duis voluptate ad consectetur. Sunt ut irure ipsum in aute. Irure ex pariatur ea laborum eu deserunt
+            eiusmod sunt. Nostrud pariatur ipsum esse est culpa id est dolor et.</p>
+    </section>
+    <section id="section2">
+        <h1>Section 2</h1>
+        <p>Ea irure commodo laboris magna commodo. Nulla enim est sunt in ad cillum Lorem. Consequat fugiat enim irure
+            consequat commodo exercitation esse tempor. Enim tempor consectetur ullamco enim ex irure quis ea anim id
+            tempor incididunt. Pariatur incididunt tempor fugiat aliqua dolor sint duis. Tempor Lorem consectetur
+            adipisicing et eu est aliquip qui ex ullamco. Id exercitation ut officia irure ut ullamco laboris eu.
+
+            Eiusmod non aliqua reprehenderit excepteur et culpa ipsum ullamco minim. Nulla anim mollit commodo est
+            cillum adipisicing. Occaecat aute cupidatat voluptate mollit aliquip non dolor deserunt pariatur eiusmod.
+            Irure nulla dolor labore laborum cupidatat pariatur elit consequat ullamco id exercitation amet adipisicing
+            reprehenderit. Anim sit veniam dolore consequat nisi mollit aliqua.
+
+            Do ad laborum dolor velit ex ullamco incididunt commodo. Anim cupidatat mollit labore sit laboris culpa esse
+            enim sint. Ea incididunt qui velit officia magna eiusmod officia minim non. Eu dolore laboris velit non.
+            Elit aute nulla incididunt sunt amet aliquip aute sint in excepteur. Do aliqua deserunt dolor pariatur
+            mollit proident. Culpa eu labore dolor irure pariatur aute.
+
+            Et culpa do quis laborum do minim. Amet enim consequat cupidatat velit. Incididunt excepteur aliqua duis
+            eiusmod ea eu aute qui ut consectetur labore aute occaecat. Quis do voluptate tempor commodo eu ut esse. Qui
+            dolore laboris labore laboris pariatur sit ut occaecat est aliqua labore nisi sit consequat. Incididunt
+            cillum duis laborum proident nulla in elit id tempor amet officia. Elit aliquip elit tempor ipsum elit nisi
+            consequat qui.
+
+            Elit nulla nulla occaecat sit minim mollit nostrud sunt laboris. Esse incididunt cupidatat ex deserunt
+            incididunt enim Lorem amet magna ea ipsum ipsum aliqua ipsum. Incididunt consectetur duis fugiat id.
+            Incididunt irure culpa tempor nostrud culpa. Laborum laborum anim esse ea incididunt est mollit nulla
+            laborum officia incididunt ut aute. Nulla est adipisicing anim commodo.</p>
+
+    </section>
+    <section id="section3">
+        <h1>Section 3</h1>
+        <p>Commodo nostrud laborum proident labore anim aliqua consequat. Ad minim ut exercitation ad nostrud
+            consectetur sunt officia ut Lorem ullamco. Dolor fugiat dolore cillum consequat anim fugiat ullamco id
+            nostrud.
+
+            In fugiat labore aliquip ex est id laboris elit. Pariatur ad ullamco qui excepteur. Reprehenderit ipsum duis
+            incididunt culpa aliquip duis. Ea aliqua incididunt officia cillum qui nisi pariatur enim. Irure aliquip ut
+            quis cillum Lorem culpa id sunt consequat nulla ullamco consequat dolor. Ut occaecat nisi Lorem laboris elit
+            reprehenderit laboris est nisi exercitation officia qui sint.
+
+            Id eu culpa aute laboris commodo dolore anim duis reprehenderit dolor commodo consectetur. Commodo eu magna
+            eu dolore quis ullamco. Exercitation nostrud est elit reprehenderit. In do Lorem eiusmod et eu ipsum amet
+            fugiat amet Lorem voluptate.
+
+            Sunt ipsum cillum laboris irure aliqua sunt. Nisi tempor cillum proident ea cillum. Nostrud veniam veniam
+            labore exercitation in enim est velit cillum nulla ad proident. Amet aliquip in id ex. Consectetur dolore
+            aliqua nulla veniam proident veniam irure occaecat. In minim ad amet ex in ex est dolor pariatur laboris eu
+            qui ullamco dolor. Anim sit Lorem ad aliqua est et veniam exercitation consectetur eu.
+
+            Mollit sint amet culpa proident consequat amet sint voluptate anim veniam aliqua culpa. Nisi aute aliquip
+            fugiat pariatur. Lorem aute non ut do cillum est officia tempor tempor anim qui ad consectetur.</p>
+    </section>
+</body>
+
+<script>
+    let menu = document.querySelector('.menu')
+    let links = document.querySelectorAll('a')
+
+    links.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            let href = link.getAttribute('href')
+            let section = document.querySelector(href)
+            section.scrollIntoView({
+                behavior: 'smooth'
+            })
+        })
+    })
+
+
+</script>
+
+</html> -->
+
+
+
+
+
+
+
+
+<!-- Validación de Formulario en Tiempo Real: Implementa la validación de formularios en tiempo real utilizando eventos y mensajes de error dinámicos. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="formulario">
+        <label for="email">Correo Electrónico:</label>
+        <input type="email" id="email" name="email" required>
+        <span id="errorEmail" style="color: red;"></span>
+
+        <br>
+
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" name="password" required>
+        <span id="errorPassword" style="color: red;"></span>
+
+        <button id="enviar">enviar</button>
+    </form>
+</body>
+
+<script>
+    const formulario = document.getElementById('formulario')
+    const email = document.getElementById('email')
+    const password = document.getElementById('password')
+    const errorEmail = document.getElementById('errorEmail')
+    const errorPassword = document.getElementById('errorPassword')
+    const enviar = document.getElementById('enviar')
+
+    formulario.addEventListener('submit', (e) => {
+        e.preventDefault()
+        let errores = []
+
+        if (!email.value.includes('@')) {
+            errores.push('El email debe contener un @')
+        }
+
+        if (password.value.length < 8) {
+            errores.push('La contraseña debe tener al menos 8 caracteres')
+        }
+
+
+        errorEmail.innerText = ''
+        errorPassword.innerText = ''
+
+        if (errores.length > 0) {
+            e.preventDefault()
+            errores.forEach((error, index) => {
+                if (index === 0) {
+                    errorEmail.innerText = error
+                } else {
+                    errorPassword.innerText = error
+                }
+            })
+        } else {
+            formulario.submit()
+        }
+    })
+</script>
+
+</html> -->
+
+
+
+
+
+
+
+
+
+<!-- Toggle de Clase al Hacer Clic: Selecciona un conjunto de elementos y aplica un efecto de "toggle" al hacer clic en ellos, como cambiar su fondo o bordes. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .active {
+            background-color: lightblue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <ul class="lista">
+        <li class="item">hello <button>click</button></li>
+        <li class="item">world <button>click</button></li>
+    </ul>
+
+    <script>
+        let lista = document.querySelector('.lista');
+
+        lista.addEventListener('click', (e) => {
+            if (e.target.tagName === 'BUTTON') {
+                let listItem = e.target.closest('.item');
+                if (listItem) {
+                    listItem.classList.toggle('active');
+                }
+            }
+        });
+    </script>
+
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+
+<!-- Búsqueda y Resaltado de Texto: Crea un campo de búsqueda que permita a los usuarios buscar y resaltar texto en la página. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="#">
+        <ul>
+            <li>David</li>
+            <li>Apolo</li>
+            <li>Smock</li>
+        </ul>
+        <input type="text" id="input" placeholder="nombre">
+        <button type="submit">Buscar</button>
+    </form>
+</body>
+
+<script>
+    let input = document.getElementById('input');
+    let lis = document.querySelectorAll('li');
+
+    input.addEventListener('keyup', (e) => {
+        let value = e.target.value.toLowerCase()
+        lis.forEach(li => {
+            if (li.textContent.toLowerCase().includes(value)) {
+                li.style.color = 'red'
+            } else {
+                li.style.color = 'black'
+            }
+        })
+    })
+
+
+</script>
+
+</html> -->
+
+
+
+
+
+
+
+
+<!-- Galería de Imágenes con Navegación: Construye una galería de imágenes con botones de navegación. Permite que los usuarios pasen de una imagen a otra sin recargar la página. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #galeria {
+            text-align: center;
+        }
+
+        #imagenPrincipal {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="galeria">
+        <img id="imagenPrincipal" src="./s1.jfif" alt="Imagen 1">
+        <br>
+        <button onclick="anteriorImagen()">Anterior</button>
+        <button onclick="siguienteImagen()">Siguiente</button>
+    </div>
+
+    <script>
+        const imagenes = ['s2.jfif', 's3.jfif', 's4.jfif'];
+        let indiceActual = 0;
+        const imagenPrincipal = document.getElementById('imagenPrincipal');
+
+        function mostrarImagen() {
+            imagenPrincipal.src = imagenes[indiceActual];
+        }
+
+        function anteriorImagen() {
+            if (indiceActual > 0) {
+                indiceActual--;
+            } else {
+                indiceActual = imagenes.length - 1;
+            }
+            mostrarImagen();
+        }
+
+        function siguienteImagen() {
+            if (indiceActual < imagenes.length - 1) {
+                indiceActual++;
+            } else {
+                indiceActual = 0;
+            }
+            mostrarImagen();
+        }
+
+        mostrarImagen();
+    </script>
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+
+<!-- Árbol de Contenidos Interactivo: Utiliza la estructura de árbol del DOM para crear un árbol de contenidos interactivo. Permite expandir y contraer secciones. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .seccion {
+            padding-left: 20px;
+            cursor: pointer;
+        }
+
+        .seccion:hover {
+            background-color: #f0f0f0;
+        }
+
+        .visible {
+            display: block;
+        }
+
+        ul ul {
+            display: none;
+        }
+    </style>
+
+</head>
+
+<body>
+    <ul id="arbol">
+        <li class="seccion" onclick="toggleSeccion(this)">
+            <h3>Sección 1</h3>
+            <ul>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia accusamus vitae placeat hic soluta
+                    laudantium debitis neque, adipisci laboriosam similique molestiae in ex molestias, esse quisquam quo
+                    obcaecati sapiente natus?</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi similique voluptates, sint iure
+                    officiis ab praesentium dolorem quisquam eveniet veritatis quasi deserunt ullam architecto error
+                    suscipit voluptatum sunt adipisci corporis!</li>
+            </ul>
+        </li>
+        <li class="seccion" onclick="toggleSeccion(this)">
+            <h3>Sección 2</h3>
+            <ul>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae cum accusamus maxime aperiam dolores!
+                    Aliquam corrupti excepturi ea natus laborum dicta tempore. Quas excepturi est cupiditate vel, totam
+                    quam ipsa!</li>
+                <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis iste odit impedit voluptas error
+                    labore perspiciatis adipisci repellendus repudiandae quaerat dolore ipsam similique alias quis
+                    deserunt, sit ut amet soluta.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <script>
+        function toggleSeccion(seccion) {
+            const sublist = seccion.querySelector('ul');
+            if (sublist) {
+                sublist.classList.toggle('visible');
+            }
+        }
+    </script>
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+
+<!-- Actualización de Contenido en Tiempo Real: Utiliza JavaScript para actualizar dinámicamente el contenido de tu página en tiempo real, como mostrar la hora actualizada sin necesidad de recargar. -->
+
+
+<!-- este ejercicio se repite en la seccion 2, ejercicio 10-->
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="horaActual"></h1>
+
+    <script>
+        function obtenerHoraActual() {
+            const ahora = new Date();
+            const horas = ahora.getHours().toString().padStart(2, '0');
+            const minutos = ahora.getMinutes().toString().padStart(2, '0');
+            const segundos = ahora.getSeconds().toString().padStart(2, '0');
+
+            return `${horas}:${minutos}:${segundos}`;
+        }
+
+        function actualizarHora() {
+            const horaActualElemento = document.getElementById('horaActual');
+            horaActualElemento.textContent = obtenerHoraActual();
+        }
+
+        setInterval(actualizarHora, 1000);
+
+    </script>
+</body>
+
+</html> -->

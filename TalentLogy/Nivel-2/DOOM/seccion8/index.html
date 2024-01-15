@@ -1,0 +1,988 @@
+<!-- Validación de formulario básica: Crea un formulario con campos obligatorios y utiliza JavaScript para verificar que todos los campos requeridos estén completos antes de permitir el envío. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        form {
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .error-message {
+            color: #ff0000;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form id="formu">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="email">Correo Electrónico:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
+        <button type="button" onclick="validarFormulario()">Enviar</button>
+
+        <p id="errorMensaje" class="error-message"></p>
+    </form>
+
+    <script>
+        function validarFormulario() {
+            var nombre = document.getElementById("nombre").value
+            var email = document.getElementById("email").value
+            var mensaje = document.getElementById("mensaje").value
+
+            if (nombre === "" || email === "" || mensaje === "") {
+                document.getElementById("errorMensaje").innerHTML = "Todos los campos son obligatorios."
+            } else {
+                document.getElementById("errorMensaje").innerHTML = "";
+                alert("Formulario enviado correctamente!")
+            }
+        }
+    </script>
+
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+
+<!-- Autocompletado de direcciones: Implementa la autocompletación de direcciones a medida que los usuarios escriben en un campo de dirección. Utiliza una API de geolocalización y actualiza dinámicamente los campos del formulario. -->
+
+
+<!-- para ver la info, se debe abrir la consola del navegador -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        form {
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        .error-message {
+            color: #ff0000;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form>
+        <label for="direccion">Dirección:</label>
+        <input type="text" id="direccion" name="direccion" placeholder="Escribe tu dirección">
+
+        <p id="errorMensaje" class="error-message"></p>
+    </form>
+
+    <script>
+        function autocompletarDireccion() {
+            let direccionInput = document.getElementById('direccion')
+            let errorMensaje = document.getElementById('errorMensaje')
+
+            errorMensaje.innerHTML = ''
+
+            let direccion = direccionInput.value
+
+            if (direccion.trim() !== '') {
+                let apiUrl = 'https://nominatim.openstreetmap.org/search?format=json&q=' + encodeURIComponent(direccion)
+
+                fetch(apiUrl)
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.length > 0) {
+                            console.log('Dirección seleccionada:', data[0].display_name)
+                        } else {
+                            errorMensaje.innerHTML = 'No se encontraron resultados para la dirección proporcionada.'
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error al obtener datos de la API:', error)
+                        errorMensaje.innerHTML = 'Hubo un error al obtener datos de la API.'
+                    });
+            }
+        }
+
+        let inputDireccion = document.getElementById('direccion')
+        inputDireccion.addEventListener('input', autocompletarDireccion)
+    </script>
+
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+
+<!-- Contraseña segura: Desarrolla un formulario de registro que incluya una validación de contraseña. Utiliza JavaScript para verificar la fortaleza de la contraseña en función de criterios como longitud, caracteres especiales y números. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        form {
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        .error-message {
+            color: #ff0000;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form id="registroForm">
+        <label for="usuario">Usuario:</label>
+        <input type="text" id="usuario" name="usuario" required>
+
+        <label for="contrasena">Contraseña:</label>
+        <input type="password" id="contrasena" name="contrasena" oninput="validarContrasena()" required>
+        <p class="error-message" id="longitudError">La contraseña debe tener al menos 8 caracteres.</p>
+        <p class="error-message" id="caracterEspecialError">La contraseña debe contener al menos un carácter especial.
+        </p>
+        <p class="error-message" id="numeroError">La contraseña debe contener al menos un número.</p>
+
+        <button type="submit">Registrarse</button>
+    </form>
+
+    <script>
+        function validarContrasena() {
+            let contrasenaInput = document.getElementById('contrasena')
+            let longitudError = document.getElementById('longitudError')
+            let caracterEspecialError = document.getElementById('caracterEspecialError')
+            let numeroError = document.getElementById('numeroError')
+
+            let contrasena = contrasenaInput.value
+
+            if (contrasena.length >= 8) {
+                longitudError.style.display = 'none'
+            } else {
+                longitudError.style.display = 'block'
+            }
+
+            let caracterEspecialRegex = /[!@#$%^&*(),.?":{}|<>]/
+            if (caracterEspecialRegex.test(contrasena)) {
+                caracterEspecialError.style.display = 'none'
+            } else {
+                caracterEspecialError.style.display = 'block'
+            }
+
+            let numeroRegex = /\d/
+            if (numeroRegex.test(contrasena)) {
+                numeroError.style.display = 'none'
+            } else {
+                numeroError.style.display = 'block'
+            }
+        }
+
+        document.getElementById('registroForm').addEventListener('submit', function (event) {
+            validarContrasena()
+            let contrasenaInput = document.getElementById('contrasena');
+            if (contrasenaInput.validity.valid) {
+                alert('Registro exitoso')
+            } else {
+                event.preventDefault()
+            }
+        });
+    </script>
+
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+
+<!-- Selección condicional: Construye un formulario que, al seleccionar una opción en un campo, modifica dinámicamente las opciones disponibles en otro campo. Utiliza el DOM para lograr este comportamiento basado en la selección del usuario. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        form {
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form>
+        <label for="categoria">Categoría:</label>
+        <select id="categoria" name="categoria" onchange="actualizarOpciones()">
+            <option value="frutas">Frutas</option>
+            <option value="vegetales">Vegetales</option>
+        </select>
+
+        <label for="producto">Producto:</label>
+        <select id="producto" name="producto">
+        </select>
+    </form>
+
+    <script>
+        function actualizarOpciones() {
+            let categoriaSelect = document.getElementById('categoria')
+            let productoSelect = document.getElementById('producto')
+
+            productoSelect.innerHTML = ''
+
+            let categoriaSeleccionada = categoriaSelect.value
+
+            if (categoriaSeleccionada === 'frutas') {
+                agregarOpcion(productoSelect, 'manzana', 'Manzana')
+                agregarOpcion(productoSelect, 'naranja', 'Naranja')
+                agregarOpcion(productoSelect, 'platano', 'Plátano')
+            } else if (categoriaSeleccionada === 'vegetales') {
+                agregarOpcion(productoSelect, 'zanahoria', 'Zanahoria')
+                agregarOpcion(productoSelect, 'brocoli', 'Brócoli')
+                agregarOpcion(productoSelect, 'papa', 'Papa')
+            }
+        }
+
+        function agregarOpcion(select, value, text) {
+            let opcion = document.createElement('option')
+            opcion.value = value
+            opcion.text = text
+            select.add(opcion)
+        }
+
+        actualizarOpciones()
+    </script>
+
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+
+<!-- Envío asíncrono de formulario: Implementa el envío asíncrono de un formulario utilizando JavaScript y la API Fetch. Muestra un mensaje de éxito o error sin recargar la página después de enviar el formulario. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        form {
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .mensaje {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .mensaje-exito {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .mensaje-error {
+            background-color: #f44336;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form id="miFormulario">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="email">Correo Electrónico:</label>
+        <input type="email" id="email" name="email" required>
+
+        <button type="button" onclick="enviarFormulario()">Enviar</button>
+
+        <div id="mensaje" class="mensaje"></div>
+    </form>
+
+    <script>
+        function enviarFormulario() {
+            let formulario = document.getElementById('miFormulario')
+            let mensaje = document.getElementById('mensaje')
+
+            let formData = new FormData(formulario)
+
+            console.log('Datos del formulario:', Object.fromEntries(formData))
+
+            mensaje.className = 'mensaje mensaje-exito'
+            mensaje.textContent = 'Formulario enviado a la consola.'
+
+        }
+    </script>
+
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+
+
+<!-- Campos dependientes de la fecha: Crea un formulario de reserva que ajuste dinámicamente las opciones disponibles en función de la fecha seleccionada por el usuario. Utiliza el DOM para actualizar las opciones de campos relacionados. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        form {
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form>
+        <label for="fecha">Fecha de Reserva:</label>
+        <input type="date" id="fecha" name="fecha" onchange="actualizarOpciones()">
+
+        <label for="turno">Turno:</label>
+        <select id="turno" name="turno">
+        </select>
+
+        <label for="servicio">Servicio:</label>
+        <select id="servicio" name="servicio">
+        </select>
+    </form>
+
+    <script>
+        function actualizarOpciones() {
+            let fechaInput = document.getElementById('fecha')
+            let turnoSelect = document.getElementById('turno')
+            let servicioSelect = document.getElementById('servicio')
+
+            turnoSelect.innerHTML = ''
+            servicioSelect.innerHTML = ''
+
+            let fechaSeleccionada = new Date(fechaInput.value)
+
+            if (fechaSeleccionada.getDay() === 1 || fechaSeleccionada.getDay() === 3) {
+                agregarOpcion(turnoSelect, 'manana', 'Mañana')
+            } else if (fechaSeleccionada.getDay() === 2 || fechaSeleccionada.getDay() === 4) {
+                agregarOpcion(turnoSelect, 'tarde', 'Tarde')
+            } else {
+                agregarOpcion(turnoSelect, 'manana', 'Mañana')
+                agregarOpcion(turnoSelect, 'tarde', 'Tarde')
+            }
+
+            if (fechaSeleccionada.getMonth() === 11) {
+                agregarOpcion(servicioSelect, 'cena', 'Cena Especial')
+            } else {
+                agregarOpcion(servicioSelect, 'almuerzo', 'Almuerzo Estándar')
+                agregarOpcion(servicioSelect, 'cena', 'Cena Estándar')
+            }
+        }
+
+        function agregarOpcion(select, value, text) {
+            let opcion = document.createElement('option')
+            opcion.value = value
+            opcion.text = text
+            select.add(opcion)
+        }
+
+        actualizarOpciones()
+    </script>
+
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+
+<!-- Autenticación en tiempo real: Desarrolla un formulario de inicio de sesión que verifica las credenciales del usuario en tiempo real a medida que las ingresan. Utiliza JavaScript para realizar la validación y proporciona retroalimentación inmediata al usuario. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        form {
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .mensaje {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .mensaje-exito {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .mensaje-error {
+            background-color: #f44336;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form>
+        <label for="usuario">Usuario:</label>
+        <input type="text" id="usuario" name="usuario" required>
+
+        <label for="contrasena">Contraseña:</label>
+        <input type="password" id="contrasena" name="contrasena" required>
+
+        <button type="button" onclick="iniciarSesion()">Iniciar Sesión</button>
+
+        <div id="mensaje" class="mensaje"></div>
+    </form>
+
+    <script>
+        function iniciarSesion() {
+            let usuarioInput = document.getElementById('usuario')
+            let contrasenaInput = document.getElementById('contrasena')
+            let mensaje = document.getElementById('mensaje')
+
+            let usuarioValido = "usuario";
+            let contrasenaValida = "contra";
+
+            if (usuarioInput.value === usuarioValido && contrasenaInput.value === contrasenaValida) {
+                mensaje.className = 'mensaje mensaje-exito'
+                mensaje.textContent = 'Inicio de sesión exitoso.'
+            } else {
+                mensaje.className = 'mensaje mensaje-error'
+                mensaje.textContent = 'Usuario o contraseña incorrectos.'
+            }
+        }
+    </script>
+
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+
+<!-- Lista de selección múltiple mejorada: Mejora una lista de selección múltiple permitiendo la búsqueda y selección de elementos. Utiliza el DOM para actualizar la lista según los términos ingresados por el usuario. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        select {
+            width: 300px;
+            height: 150px;
+            padding: 8px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 10px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <select id="listaSeleccionMultiple" multiple>
+        <option value="opcion1">Opción 1</option>
+        <option value="opcion2">Opción 2</option>
+        <option value="opcion3">Opción 3</option>
+        <option value="opcion4">Opción 4</option>
+        <option value="opcion5">Opción 5</option>
+        <option value="opcion6">Opción 6</option>
+    </select>
+
+    <input type="text" id="busqueda" placeholder="Buscar opciones..." oninput="filtrarOpciones()">
+
+    <script>
+        function filtrarOpciones() {
+            let inputBusqueda = document.getElementById('busqueda')
+            let selectLista = document.getElementById('listaSeleccionMultiple')
+            let opciones = selectLista.getElementsByTagName('option')
+
+            let filtro = inputBusqueda.value.toLowerCase()
+
+            for (let i = 0; i < opciones.length; i++) {
+                let textoOpcion = opciones[i].textContent.toLowerCase()
+                opciones[i].style.display = textoOpcion.includes(filtro) ? 'block' : 'none'
+            }
+        }
+    </script>
+
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+
+<!-- Subida de archivos con barra de progreso: Diseña un formulario que permita a los usuarios cargar archivos y muestra una barra de progreso durante la subida. Utiliza JavaScript para gestionar la carga de archivos y actualizar visualmente el progreso. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        input[type="file"] {
+            margin-bottom: 15px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 15px;
+        }
+
+        progress {
+            width: 100%;
+            height: 20px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <input type="file" id="archivo" accept=".pdf, .doc, .docx, .jpg, .jpeg, .png">
+
+    <button onclick="mostrarArchivo()">Mostrar Vista Previa</button>
+
+    <div id="vistaPrevia"></div>
+
+    <progress id="barraProgreso" value="0" max="100" style="display: none;"></progress>
+
+    <script>
+        function mostrarArchivo() {
+            let archivoInput = document.getElementById('archivo')
+            let vistaPrevia = document.getElementById('vistaPrevia')
+            let barraProgreso = document.getElementById('barraProgreso')
+
+            let archivo = archivoInput.files[0]
+            if (!archivo) {
+                alert('Selecciona un archivo antes de mostrarlo.')
+                return
+            }
+
+            let lector = new FileReader()
+
+            lector.onloadstart = function () {
+                barraProgreso.style.display = 'block'
+            };
+
+            lector.onload = function (evento) {
+                // Simula un retardo antes de mostrar la vista previa
+                setTimeout(function () {
+                    if (archivo.type.startsWith('image/')) {
+                        vistaPrevia.innerHTML = '<img src="' + evento.target.result + '" alt="Vista Previa">'
+                    } else {
+                        vistaPrevia.innerHTML = '<p>Nombre del Archivo: ' + archivo.name + '</p>'
+                    }
+
+                    barraProgreso.style.display = 'none'
+                }, 1000)
+            };
+
+            lector.onprogress = function (evento) {
+                if (evento.lengthComputable) {
+                    let porcentaje = (evento.loaded / evento.total) * 100
+                    barraProgreso.value = porcentaje
+                }
+            };
+
+            lector.readAsDataURL(archivo)
+        }
+    </script>
+
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Campos dinámicos de formulario: Crea un formulario que permite a los usuarios agregar dinámicamente campos adicionales según sea necesario. Utiliza el DOM para clonar y agregar nuevos elementos al formulario en respuesta a las acciones del usuario. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .campo {
+            margin-bottom: 10px;
+        }
+
+        .eliminar {
+            cursor: pointer;
+            color: red;
+            border: 1px solid red;
+            border-radius: 10px;
+            padding: 3px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form id="miFormulario">
+        <div class="campo">
+            <label for="campo1">Campo 1:</label>
+            <input type="text" id="campo1" name="campo1">
+            <span class="eliminar" onclick="eliminarCampo(this)">Eliminar</span>
+        </div>
+    </form>
+
+    <button onclick="agregarCampo()">Agregar Campo</button>
+
+    <script>
+        let contadorCampos = 1
+
+        function agregarCampo() {
+            contadorCampos++
+
+            let formulario = document.getElementById('miFormulario')
+            let nuevoCampo = document.createElement('div')
+            nuevoCampo.classList.add('campo')
+
+            nuevoCampo.innerHTML = `
+                <label for="campo${contadorCampos}">Campo ${contadorCampos}:</label>
+                <input type="text" id="campo${contadorCampos}" name="campo${contadorCampos}">
+                <span class="eliminar" onclick="eliminarCampo(this)">Eliminar</span>
+            `
+
+            formulario.appendChild(nuevoCampo);
+        }
+
+        function eliminarCampo(elemento) {
+            let campoEliminar = elemento.parentNode
+            campoEliminar.parentNode.removeChild(campoEliminar)
+        }
+    </script>
+
+</body>
+
+</html> -->

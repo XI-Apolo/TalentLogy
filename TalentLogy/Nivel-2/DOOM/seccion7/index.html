@@ -1,0 +1,1083 @@
+<!-- Cambios dinámicos de estilo: Crea una página web con un botón que, al hacer clic, cambie dinámicamente el color de fondo de un elemento HTML utilizando JavaScript y estilos en el DOM. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            background-color: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="boton">click</button>
+</body>
+
+<script>
+    const boton = document.querySelector('.boton');
+    const body = document.querySelector('body');
+
+    boton.addEventListener('click', () => {
+        body.style.backgroundColor = '#fff';
+    });
+</script>
+
+</html> -->
+
+
+
+
+
+
+
+
+<!-- Alternar clases: Desarrolla una interfaz de lista donde cada elemento pueda cambiar su apariencia al hacer clic en él. Utiliza clases CSS y manipulación del DOM para alternar entre dos estilos diferentes. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+    .active {
+        background-color: #ff0000;
+    }
+    li{
+        margin: 10px;
+    }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>elemento 1 <button>click</button></li>
+        <li>elemento 2 <button>click</button></li>
+        <li>elemento 3 <button>click</button></li>
+    </ul>
+</body>
+
+<script>
+    const botones = document.querySelectorAll('button');
+    const lis = document.querySelectorAll('li');
+
+    botones.forEach((boton, index) => {
+        boton.addEventListener('click', () => {
+            lis[index].classList.toggle('active');
+        });
+    });
+</script>
+
+</html> -->
+
+
+
+
+
+
+
+
+<!-- Validación de formulario en tiempo real: Construye un formulario con campos de entrada y utiliza estilos CSS para resaltar los campos que contienen datos incorrectos. Emplea el DOM para actualizar los estilos en tiempo real mientras el usuario completa el formulario. -->
+
+
+<!-- este ejercicio se repite en la seccion 4, ejercicio 5 -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="formulario">
+        <label for="email">Correo Electrónico:</label>
+        <input type="email" id="email" name="email" required>
+        <span id="errorEmail" style="color: red;"></span>
+
+        <br>
+
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" name="password" required>
+        <span id="errorPassword" style="color: red;"></span>
+
+        <button id="enviar">enviar</button>
+    </form>
+</body>
+
+<script>
+    const formulario = document.getElementById('formulario')
+    const email = document.getElementById('email')
+    const password = document.getElementById('password')
+    const errorEmail = document.getElementById('errorEmail')
+    const errorPassword = document.getElementById('errorPassword')
+    const enviar = document.getElementById('enviar')
+
+    formulario.addEventListener('submit', (e) => {
+        e.preventDefault()
+        let errores = []
+
+        if (!email.value.includes('@')) {
+            errores.push('El email debe contener un @')
+        }
+
+        if (password.value.length < 8) {
+            errores.push('La contraseña debe tener al menos 8 caracteres')
+        }
+
+
+        errorEmail.innerText = ''
+        errorPassword.innerText = ''
+
+        if (errores.length > 0) {
+            e.preventDefault()
+            errores.forEach((error, index) => {
+                if (index === 0) {
+                    errorEmail.innerText = error
+                } else {
+                    errorPassword.innerText = error
+                }
+            })
+        } else {
+            formulario.submit()
+        }
+    })
+</script>
+
+</html> -->
+
+
+
+
+
+
+
+
+<!-- Galería de imágenes interactiva: Crea una galería de imágenes que permita a los usuarios navegar entre ellas. -->
+
+<!-- este ejercicio se repite en varias secciones -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+
+    const imagenes = ['px.jpg', 'px2.png'];
+
+
+    const body = document.body;
+
+    const imagen = document.createElement('img');
+
+    let indiceActual = 0;
+
+    function actualizarImagen() {
+        imagen.src = imagenes[indiceActual];
+    }
+
+    function siguienteImagen() {
+        indiceActual = (indiceActual + 1) % imagenes.length;
+        actualizarImagen();
+    }
+
+    function imagenAnterior() {
+        indiceActual = (indiceActual - 1 + imagenes.length) % imagenes.length;
+        actualizarImagen();
+    }
+
+    actualizarImagen();
+
+    body.appendChild(imagen);
+
+    const botonAnterior = document.createElement('button');
+    botonAnterior.textContent = 'Anterior';
+    botonAnterior.addEventListener('click', imagenAnterior);
+    body.appendChild(botonAnterior);
+
+    const botonSiguiente = document.createElement('button');
+    botonSiguiente.textContent = 'Siguiente';
+    botonSiguiente.addEventListener('click', siguienteImagen);
+    body.appendChild(botonSiguiente);
+</script>
+
+</script>
+
+</html> -->
+
+
+
+
+
+
+
+<!-- Utiliza clases y estilos para resaltar la imagen actual y ajustar dinámicamente el tamaño de las miniaturas.
+Lista desplegable dependiente: Diseña un formulario con dos listas desplegables, donde la selección en la primera afecta dinámicamente las opciones disponibles en la segunda. Utiliza manipulación del DOM para lograr este comportamiento. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .imagen-destacada {
+            border: 2px solid blue;
+        }
+
+        .miniatura {
+            width: 50px;
+            height: 50px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="galeria"></div>
+
+    <div id="form-container">
+        <label for="categoria">Categoría:</label>
+        <select id="categoria" onchange="actualizarOpciones()">
+            <option value="frutas">Frutas</option>
+            <option value="vegetales">Vegetales</option>
+            <option value="carnes">Carnes</option>
+        </select>
+
+        <label for="producto">Producto:</label>
+        <select id="producto">
+            <option value="manzana">Manzana</option>
+            <option value="banana">Banana</option>
+            <option value="uva">Uva</option>
+        </select>
+    </div>
+
+    <script>
+
+        class Galeria {
+            constructor(imagenes) {
+                this.imagenes = imagenes
+                this.indiceActual = 0
+                this.inicializarGaleria()
+            }
+
+            inicializarGaleria() {
+                const galeriaDiv = document.getElementById('galeria')
+
+                this.imagenPrincipal = document.createElement('img')
+                this.imagenPrincipal.classList.add('imagen-destacada')
+                galeriaDiv.appendChild(this.imagenPrincipal)
+
+                this.miniaturasDiv = document.createElement('div')
+                galeriaDiv.appendChild(this.miniaturasDiv)
+
+                this.imagenes.forEach((imagen, index) => {
+                    const miniatura = document.createElement('img')
+                    miniatura.src = imagen
+                    miniatura.classList.add('miniatura')
+                    miniatura.addEventListener('click', () => this.seleccionarImagen(index))
+                    this.miniaturasDiv.appendChild(miniatura)
+                });
+
+                this.actualizarImagen()
+            }
+
+            seleccionarImagen(indice) {
+                this.indiceActual = indice
+                this.actualizarImagen()
+            }
+
+            actualizarImagen() {
+                this.imagenPrincipal.src = this.imagenes[this.indiceActual]
+
+                const miniaturas = this.miniaturasDiv.getElementsByTagName('img')
+                for (let i = 0; i < miniaturas.length; i++) {
+                    miniaturas[i].classList.remove('imagen-destacada')
+                }
+                miniaturas[this.indiceActual].classList.add('imagen-destacada')
+            }
+        }
+
+        const imagenesGaleria = ['px.jpg', 'px2.png']
+        const galeria = new Galeria(imagenesGaleria)
+
+
+
+        function actualizarOpciones() {
+            const categoria = document.getElementById('categoria')
+            const producto = document.getElementById('producto')
+
+            while (producto.options.length > 0) {
+                producto.remove(0)
+            }
+
+            switch (categoria.value) {
+                case 'frutas':
+                    agregarOpcion(producto, 'Manzana')
+                    agregarOpcion(producto, 'Banana')
+                    agregarOpcion(producto, 'Uva')
+                    break
+                case 'vegetales':
+                    agregarOpcion(producto, 'Zanahoria')
+                    agregarOpcion(producto, 'Brócoli')
+                    agregarOpcion(producto, 'Tomate')
+                    break
+                case 'carnes':
+                    agregarOpcion(producto, 'Pollo')
+                    agregarOpcion(producto, 'Res')
+                    agregarOpcion(producto, 'Pescado')
+                    break
+                default:
+                    break
+            }
+        }
+
+        function agregarOpcion(select, texto) {
+            const opcion = document.createElement('option')
+            opcion.value = texto.toLowerCase()
+            opcion.text = texto
+            select.add(opcion)
+        }
+    </script>
+
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+
+
+<!-- Menú de navegación responsive: Implementa un menú de navegación que se ajuste de forma dinámica según el tamaño de la pantalla. Utiliza clases CSS para controlar la visibilidad y apariencia del menú en dispositivos móviles y de escritorio. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            overflow: hidden;
+            background-color: #949494;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        @media screen and (max-width: 600px) {
+            .navbar a:not(.icon) {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+
+            .navbar a.icon {
+                display: block;
+            }
+
+            .navbar.responsive a:not(.icon) {
+                display: block;
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        @media screen and (min-width: 601px) {
+            .navbar a.icon {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="navbar" id="myNavbar">
+        <a href="#home">Inicio</a>
+        <a href="#news">Noticias</a>
+        <a href="#contact">Contacto</a>
+        <a href="#about">Acerca de</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()" aria-label="Toggle Navigation">&#9776;</a>
+
+    </div>
+
+    <section id="home">
+        <h1>Inicio</h1>
+        <p>Sunt aliquip aliquip commodo sunt. Sunt esse commodo eiusmod tempor est occaecat in eiusmod commodo fugiat.
+            Deserunt qui exercitation magna ipsum enim anim cillum elit aute consectetur minim mollit. Occaecat Lorem
+            magna excepteur esse. Aliqua minim nisi reprehenderit et eu anim laborum ex. Eiusmod laborum amet eu culpa
+            excepteur enim anim proident culpa.
+
+            Est minim consequat culpa nisi amet minim dolore. Esse fugiat nulla ad nisi dolor nulla qui sunt nostrud
+            aliqua. Eu sit id duis ullamco laborum laboris non sit ea eiusmod aliquip incididunt labore. Aliquip laboris
+            commodo elit ullamco dolore. Non qui et culpa qui tempor non velit laboris. Deserunt id nostrud officia
+            velit cillum ullamco eiusmod.
+
+            Aliqua labore cillum esse adipisicing mollit velit voluptate commodo tempor in in cillum. Aliquip in qui
+            cillum pariatur velit non est veniam sint minim nulla ipsum adipisicing sunt. Et pariatur ex ad ex elit
+            dolore id proident pariatur deserunt labore. Officia dolor eiusmod esse elit sint.
+
+            Quis proident voluptate minim minim magna sit elit in. Elit amet deserunt minim mollit sunt Lorem anim
+            dolore proident. Proident aute in aliquip deserunt est velit amet sunt mollit id ea laboris. Cillum
+            exercitation nostrud enim sint ut dolore commodo labore. Mollit in anim cupidatat et dolor cillum Lorem sunt
+            proident in eu amet. Veniam reprehenderit Lorem laborum labore et amet.
+
+            Enim incididunt Lorem duis dolor reprehenderit eiusmod ad quis nostrud cillum minim amet. Ullamco excepteur
+            ipsum reprehenderit eiusmod consequat adipisicing id. Consectetur laboris sit incididunt tempor labore
+            veniam consequat ut reprehenderit labore ullamco et.
+
+            Consectetur duis aliquip labore minim culpa fugiat. Labore tempor tempor consectetur aliquip nulla. Id ex
+            excepteur magna qui culpa non.
+
+            Excepteur dolore commodo dolore exercitation ut velit Lorem excepteur minim. In in et elit consectetur.
+            Tempor anim elit elit eiusmod. Proident exercitation nisi anim qui dolore. Ad dolor quis ex consectetur
+            eiusmod nostrud occaecat ut enim adipisicing sunt sint aliqua. Labore cupidatat nostrud dolore voluptate
+            consectetur magna laboris labore id dolor dolor ad commodo.</p>
+    </section>
+    <section id="news">
+        <h1>Noticias</h1>
+        <p>Reprehenderit sunt consectetur ex consequat ad. Occaecat do sunt nisi nostrud eu fugiat in in labore officia
+            eiusmod ea pariatur. Commodo consequat exercitation duis consequat duis nulla nostrud labore. Enim sunt
+            consectetur fugiat est nisi ullamco esse mollit duis ea. Laboris tempor voluptate cupidatat dolore pariatur
+            sint reprehenderit irure sint anim laboris. Proident ea enim ullamco occaecat ullamco nostrud. Duis elit ex
+            dolor irure id aute veniam non in quis nisi.
+
+            Culpa nostrud pariatur amet Lorem esse labore aute est pariatur reprehenderit aliqua Lorem Lorem. Amet
+            deserunt sint ullamco magna voluptate et Lorem cupidatat Lorem aliqua proident proident. Aliquip quis
+            reprehenderit nostrud id nulla duis adipisicing est. Fugiat sunt nisi duis in et nulla. Aliquip mollit velit
+            sint exercitation non Lorem.
+
+            Esse non duis ea aliquip exercitation ex sint esse enim laborum quis. Reprehenderit esse reprehenderit
+            pariatur labore nisi excepteur id aliqua sit. Ad proident Lorem cupidatat id. Mollit aliquip ad aute nostrud
+            eiusmod.
+
+            Anim ad nisi nulla exercitation consequat aliquip dolor. Magna reprehenderit sint eiusmod proident deserunt
+            do eiusmod cupidatat dolore incididunt exercitation dolor. Cupidatat proident proident aliquip sunt eu. Eu
+            reprehenderit reprehenderit ipsum mollit. Cillum voluptate aliqua quis in eiusmod ea sint deserunt id minim
+            consectetur consectetur velit fugiat. Laborum duis nisi nostrud dolor pariatur ex anim proident
+            reprehenderit cillum cillum ex. Cillum reprehenderit commodo deserunt aute ea cillum dolor qui
+            reprehenderit.
+
+            Deserunt qui exercitation ut nostrud velit mollit. Anim incididunt in ea amet Lorem veniam ullamco laboris.
+            Quis et ad eu laboris esse. Ipsum aliqua mollit duis elit. Fugiat est ad commodo occaecat anim et in dolore.
+            Commodo mollit tempor do cillum velit consectetur voluptate culpa minim non eu officia sint. Magna ex non
+            sunt anim ea ad esse magna eu nisi do Lorem.
+
+            Incididunt cillum id quis laboris dolor. Quis commodo nulla duis Lorem eu elit dolore eiusmod pariatur quis
+            ipsum consequat officia officia. Tempor sunt eiusmod irure pariatur qui qui sit non do nisi irure. Lorem est
+            Lorem veniam ea Lorem. Nostrud veniam ex consequat amet dolor incididunt duis eiusmod ut Lorem duis cillum
+            aliquip. In nulla est pariatur eu sunt do est eu laboris duis et occaecat.
+
+            Exercitation fugiat nulla sunt fugiat. In laborum incididunt officia veniam amet sint est deserunt dolore
+            cillum nostrud nostrud id excepteur. Ullamco ex eiusmod aute ipsum mollit excepteur.</p>
+    </section>
+    <section id="contact">
+        <h1>Contacto</h1>
+        <p>
+            Amet elit reprehenderit nisi magna anim cillum deserunt. Enim ipsum dolore pariatur quis esse aliqua laboris
+            esse ipsum ipsum exercitation. Aliqua do sint sunt sint do officia. Cupidatat laborum reprehenderit culpa
+            officia exercitation ullamco duis deserunt cupidatat aliquip cillum ut tempor.
+
+            Nostrud deserunt Lorem nostrud irure qui est nulla ut. Adipisicing consequat et voluptate aliquip aliqua
+            quis. Consectetur consectetur elit ad esse nostrud nulla enim id. Proident incididunt non sint fugiat ut
+            officia occaecat aliqua dolor cillum dolore ea tempor culpa. Ullamco adipisicing minim qui et irure labore
+            eiusmod laboris veniam est elit minim labore elit.
+
+            Culpa consectetur ad laboris commodo dolor mollit proident ipsum sunt. Labore laboris aliqua proident
+            occaecat anim duis tempor ex deserunt culpa. Laborum ut aute culpa nostrud consequat incididunt ex amet.
+            Quis ad labore consectetur deserunt. Eiusmod aliqua dolor aliqua ea magna anim nisi. Voluptate do Lorem
+            exercitation sint aliquip laborum ipsum tempor consequat nisi aute anim.
+
+            Sint qui cupidatat dolor ea duis eu qui aliquip occaecat officia eiusmod in voluptate. Ea cillum laboris ad
+            eiusmod sunt ipsum tempor laboris dolor excepteur eu. Laboris consectetur laborum veniam aliqua minim do in
+            dolor commodo adipisicing nisi reprehenderit sint. Ullamco nostrud non cupidatat excepteur.
+
+            Laboris laborum fugiat tempor nisi adipisicing. Eiusmod laboris non officia eiusmod. Est proident voluptate
+            nulla Lorem consectetur anim tempor do dolore aliqua ad.
+
+            Anim qui excepteur incididunt commodo velit reprehenderit officia. Dolore nostrud do ut pariatur fugiat
+            occaecat dolore magna aliquip pariatur eiusmod. Ex aliquip aliqua ullamco minim officia ad esse exercitation
+            ea sit nulla laboris cupidatat sit. Nisi sint tempor est elit aute in.
+
+            Aute irure occaecat Lorem velit velit deserunt nulla dolore exercitation proident est. Esse voluptate sint
+            aute irure officia dolor. Ut anim consequat aliquip eiusmod officia sint consequat ipsum tempor proident
+            cillum ea. Est et labore id duis sunt amet proident tempor irure est reprehenderit aliquip occaecat officia.
+        </p>
+    </section>
+    <section id="about">
+        <h1>Acerca</h1>
+        <p>Velit enim eiusmod sint occaecat nulla incididunt. Mollit id enim in nostrud incididunt qui non minim ad est
+            dolor. Pariatur amet reprehenderit proident laboris pariatur consequat esse veniam aliqua.
+
+            Fugiat occaecat adipisicing culpa fugiat. Dolore aliquip sint ea ex cupidatat amet cillum dolor fugiat
+            laboris qui. Aliquip nulla labore sit anim reprehenderit ad ea. Dolor sit veniam ullamco id esse veniam
+            nulla irure esse dolor do enim esse ullamco.
+
+            Minim aute sunt incididunt amet eu consequat. Ea in adipisicing est cupidatat non aliqua. Sint magna esse
+            exercitation qui cupidatat et id nostrud et consectetur aute.
+
+            Incididunt ea cillum duis quis nisi sit voluptate do mollit magna est culpa. Sit ex velit eiusmod magna
+            officia laborum adipisicing. Sit consequat consectetur anim occaecat anim commodo.
+
+            Deserunt sunt aliquip incididunt nisi voluptate Lorem non veniam consectetur ipsum occaecat sunt quis Lorem.
+            In cupidatat quis qui exercitation irure consectetur non occaecat. Minim tempor occaecat dolor consequat
+            mollit adipisicing magna sint sit occaecat.
+
+            Cillum qui esse cupidatat eiusmod exercitation. Sint aliqua magna mollit fugiat proident aliqua est culpa
+            ullamco consequat. Minim aute nostrud laborum qui veniam commodo aliqua eu pariatur labore culpa
+            reprehenderit.
+
+            Lorem ex velit irure velit ex ullamco. Quis quis pariatur magna minim anim et commodo eu velit reprehenderit
+            labore sit. Ex adipisicing ad sint ea ipsum laborum consectetur. Officia ullamco et est incididunt cillum
+            dolore voluptate ipsum excepteur aliqua enim anim minim cillum. Commodo consequat et esse veniam ipsum
+            voluptate aliqua proident incididunt sit veniam Lorem consectetur eiusmod. Ipsum esse velit irure anim quis.
+        </p>
+    </section>
+
+    <script>
+        function myFunction() {
+            let x = document.getElementById("myNavbar")
+            x.classList.toggle("responsive")
+        }
+
+    </script>
+
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+
+
+
+<!-- Control de visibilidad: Crea una página con varios elementos y botones que permitan mostrar u ocultar secciones específicas. Utiliza clases y estilos para cambiar la visibilidad de los elementos seleccionados mediante acciones del usuario. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .seccion {
+            display: none;
+            margin: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+
+        button {
+            padding: 10px;
+            margin-right: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button onclick="mostrarOcultar('seccion1')">Mostrar/Ocultar Sección 1</button>
+    <div class="seccion" id="seccion1">
+        <h2>Sección 1</h2>
+        <p>Id sint duis consequat aliqua cupidatat aliqua qui ex. Consectetur aliquip sint exercitation duis proident
+            consequat incididunt. Pariatur labore est voluptate ex dolor elit officia irure sint ad proident occaecat
+            labore esse.
+
+            Minim mollit dolore est magna. Lorem sint nisi eiusmod sunt magna nulla amet. Veniam eu deserunt ea ad ipsum
+            nulla adipisicing magna commodo magna id. Deserunt ut voluptate exercitation commodo Lorem non cillum velit.
+            Eiusmod mollit cillum ea exercitation culpa anim consequat veniam ipsum pariatur. Anim ea cupidatat aliquip
+            voluptate exercitation.
+
+            Sit aliqua do adipisicing elit id sint ea incididunt. Aliqua aliquip veniam Lorem reprehenderit aute duis
+            est et ea elit dolor do proident incididunt. Enim id irure ad occaecat duis adipisicing dolor amet. Sit anim
+            eiusmod consequat laboris nisi ex deserunt elit. Do aliqua nulla proident excepteur labore consequat eu
+            deserunt. Deserunt aliqua ut nostrud mollit non reprehenderit deserunt aliquip. Eu nisi exercitation
+            excepteur laborum amet eiusmod tempor voluptate cillum sint.
+
+            Reprehenderit cupidatat exercitation duis occaecat Lorem voluptate dolor voluptate ex. Cupidatat irure est
+            incididunt qui proident nostrud ipsum tempor nostrud laborum quis cillum officia ad. Laboris mollit sit ex
+            culpa deserunt excepteur anim qui ut veniam est. Esse nostrud ut officia Lorem veniam consequat. Aliqua
+            culpa sit consequat incididunt nulla. Veniam elit pariatur laborum et veniam pariatur proident ea. Nulla
+            excepteur culpa laboris et do labore dolor ipsum consequat sint reprehenderit Lorem nostrud ullamco.</p>
+    </div>
+
+    <button onclick="mostrarOcultar('seccion2')">Mostrar/Ocultar Sección 2</button>
+    <div class="seccion" id="seccion2">
+        <h2>Sección 2</h2>
+        <p>Ex eu sint esse fugiat exercitation. Proident ad id do eiusmod veniam veniam. Tempor esse excepteur culpa
+            incididunt tempor eiusmod cupidatat. Eiusmod amet duis in aliqua elit tempor non anim elit amet
+            reprehenderit minim aliqua. Duis incididunt occaecat exercitation culpa aute esse exercitation irure. Nulla
+            irure ullamco ea veniam voluptate mollit in culpa ullamco. Consectetur deserunt et incididunt occaecat sint
+            sit minim eiusmod nostrud tempor velit do deserunt dolor.
+
+            Aliqua sit in est deserunt in esse incididunt aliqua et enim officia commodo ea. Aliquip aliquip nostrud
+            fugiat deserunt ullamco minim consequat incididunt amet culpa. Nisi non Lorem do magna et esse qui sunt anim
+            non. Dolor duis anim labore consectetur incididunt consectetur ad veniam ea dolor voluptate veniam deserunt.
+            Voluptate ea pariatur nisi cillum voluptate nulla quis cillum nulla.
+
+            Aute dolore duis nisi reprehenderit occaecat officia ad. Cillum labore dolore dolore consequat sint do
+            tempor. Velit laborum aliquip aute ex. Ex aliquip commodo elit do Lorem consequat anim adipisicing quis
+            enim. Ullamco qui mollit dolore non ut laborum magna aliqua irure proident nisi labore consequat velit. Ex
+            minim ad est laborum consequat laborum nulla voluptate sunt est et et quis. Esse occaecat aute veniam
+            laboris dolore sunt sunt.
+
+            Eiusmod id sint nostrud minim. Eu velit ullamco magna dolor velit laborum dolore aute ipsum consequat
+            consectetur. Ullamco cupidatat consectetur non do. Cillum sint nostrud sint incididunt eu velit laboris.
+            Enim aliqua esse Lorem adipisicing non et minim commodo pariatur et. Sit sit incididunt velit reprehenderit
+            enim ad aute.</p>
+    </div>
+
+    <button onclick="mostrarOcultar('seccion3')">Mostrar/Ocultar Sección 3</button>
+    <div class="seccion" id="seccion3">
+        <h2>Sección 3</h2>
+        <p>Eiusmod sunt nisi esse deserunt non. Sint sint cupidatat non sint quis minim aliqua aliqua reprehenderit elit
+            adipisicing reprehenderit occaecat voluptate. Incididunt sit proident ipsum consectetur laboris quis id
+            pariatur.
+
+            Id quis ad et dolore ipsum reprehenderit laborum officia amet dolore reprehenderit reprehenderit. Non
+            consequat reprehenderit dolore anim. Voluptate voluptate amet Lorem anim.
+
+            Deserunt nisi commodo consequat quis ipsum excepteur ut. Pariatur commodo officia exercitation incididunt
+            nulla laborum. Tempor voluptate eiusmod dolor sunt anim irure nulla velit enim sunt elit. Consequat sint id
+            ad fugiat sint magna mollit in nulla. Officia officia veniam ex elit laborum. Amet ullamco nulla adipisicing
+            laboris commodo minim nulla duis nostrud quis nostrud cupidatat duis. Esse ut amet non cillum exercitation
+            velit minim in aliquip culpa laboris id reprehenderit.
+
+            Cupidatat ex aliquip voluptate minim. Esse ipsum eu est officia do duis incididunt velit sint in ut
+            exercitation tempor labore. Esse ut enim non dolore reprehenderit veniam reprehenderit consectetur ipsum
+            nostrud exercitation velit. Nostrud adipisicing duis quis minim non enim veniam. Fugiat nostrud minim aliqua
+            non exercitation in excepteur non. Velit sunt cillum ex mollit. Officia qui Lorem irure ex.</p>
+    </div>
+
+    <script>
+        function mostrarOcultar(id) {
+            var seccion = document.getElementById(id)
+            if (seccion.style.display === "none") {
+                seccion.style.display = "block"
+            } else {
+                seccion.style.display = "none"
+            }
+        }
+    </script>
+
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+
+<!-- Barra de progreso animada: Desarrolla una barra de progreso animada que aumente su longitud gradualmente.  -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .progress-container {
+            width: 300px;
+            background-color: #001aff;
+            border: 1px solid #000b6b;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            width: 0;
+            height: 30px;
+            background-color: #00e1ff;
+            text-align: center;
+            line-height: 30px;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="progress-container">
+        <div class="progress-bar" id="myProgressBar">0%</div>
+    </div>
+
+    <script>
+        function animarBarraDeProgreso() {
+            var barraDeProgreso = document.getElementById("myProgressBar");
+            var width = 0;
+            var intervalo = setInterval(function () {
+                if (width >= 100) {
+                    clearInterval(intervalo);
+                } else {
+                    width++;
+                    barraDeProgreso.style.width = width + "%";
+                    barraDeProgreso.innerHTML = width + "%";
+                }
+            }, 20);
+        }
+
+        animarBarraDeProgreso();
+    </script>
+
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+<!-- Utiliza estilos y manipulación del DOM para reflejar el progreso en respuesta a eventos o acciones específicas. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .progress-container {
+            width: 300px;
+            background-color: #f1f1f1;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            margin: auto; 
+        }
+
+        .progress-bar {
+            width: 0;
+            height: 30px;
+            background-color: #0bbe11;
+            text-align: center;
+            line-height: 30px;
+            color: white;
+        }
+
+        .action-button {
+            padding: 10px;
+            margin-top: 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #2196F3;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+
+        .action-button:hover {
+            background-color: #0b7dda;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="progress-container">
+            <div class="progress-bar" id="myProgressBar">0%</div>
+        </div>
+
+        <button class="action-button" onclick="realizarAccion()">Realizar Acción</button>
+    </div>
+
+    <script>
+        function animarBarraDeProgreso() {
+            var barraDeProgreso = document.getElementById("myProgressBar")
+            var width = 0
+            var intervalo = setInterval(function () {
+                if (width >= 100) {
+                    clearInterval(intervalo)
+                } else {
+                    width++
+                    barraDeProgreso.style.width = width + "%"
+                    barraDeProgreso.innerHTML = width + "%"
+                }
+            }, 20);
+        }
+
+        function realizarAccion() {
+            animarBarraDeProgreso()
+        }
+    </script>
+
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+
+<!-- Ordenar elementos arrastrables: Crea una lista de elementos que puedan ser reordenados mediante arrastre. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+
+<body>
+
+    <ul id="sortable-list">
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+        <li>Elemento 4</li>
+        <li>Elemento 5</li>
+    </ul>
+
+    <script>
+        $(function () {
+            $("#sortable-list").sortable()
+            $("#sortable-list").disableSelection()
+        });
+    </script>
+
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+<!-- Implementa estilos para resaltar el elemento en movimiento y utiliza el DOM para gestionar el cambio de posición de los elementos en la lista. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <style>
+        #sortable-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 20px;
+        }
+
+        #sortable-list li {
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            margin: 5px;
+            padding: 10px;
+            cursor: grab;
+        }
+
+        #sortable-list li.ui-sortable-helper {
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+
+<body>
+
+    <ul id="sortable-list">
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+        <li>Elemento 4</li>
+        <li>Elemento 5</li>
+    </ul>
+
+    <script>
+        $(function () {
+            $("#sortable-list").sortable({
+                helper: "clone",
+                start: function (event, ui) {
+                    ui.item.css("background-color", "#4CAF50")
+                    ui.item.css("color", "white")
+                },
+                stop: function (event, ui) {
+                    ui.item.removeAttr("style")
+                },
+                update: function (event, ui) {
+
+                    var sortedIDs = $("#sortable-list").sortable("toArray")
+                    console.log("Nueva posición de los elementos:", sortedIDs)
+                }
+            });
+
+            $("#sortable-list").disableSelection()
+        })
+    </script>
+
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+
+<!-- Cambios de tema personalizables: Diseña una aplicación que permita a los usuarios cambiar el tema de la interfaz entre diferentes opciones. Utiliza clases CSS y el DOM para aplicar dinámicamente estilos según la elección del usuario. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            transition: background-color 0.5s ease;
+        }
+
+        .light-theme {
+            background-color: #f4f4f4;
+            color: #000000;
+        }
+
+        .dark-theme {
+            background-color: #070707;
+            color: #fff;
+        }
+
+        .blue-theme {
+            background-color: #3498db;
+            color: #fff;
+        }
+
+        .theme-button {
+            margin: 10px;
+            padding: 8px 16px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body class="light-theme">
+
+    <h1>Cambiar de Tema</h1>
+
+    <button class="theme-button" onclick="cambiarTema('light-theme')">Claro</button>
+    <button class="theme-button" onclick="cambiarTema('dark-theme')">Oscuro</button>
+    <button class="theme-button" onclick="cambiarTema('blue-theme')">Azul</button>
+
+    <script>
+        function cambiarTema(theme) {
+            document.body.className = theme
+        }
+    </script>
+
+</body>
+
+</html> -->

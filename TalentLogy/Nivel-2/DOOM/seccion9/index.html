@@ -1,0 +1,769 @@
+<!-- para obtener datos desde el servicio gratuito JSONPlaceholder (https://jsonplaceholder.typicode.com/posts) y muestra el resultado en la página.Consulta de datos externos: Crea una página web con un botón que, al hacer clic, realiza una solicitud AJAX  -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button onclick="obtenerDatos()">Obtener Datos</button>
+    <div id="resultado"></div>
+
+    <script>
+        function obtenerDatos() {
+            let url = 'https://jsonplaceholder.typicode.com/posts';
+
+            fetch(url)
+                .then(response => response.json())
+                .then(data => mostrarDatos(data))
+                .catch(error => console.error('Error:', error))
+        }
+
+        function mostrarDatos(data) {
+            let resultadoDiv = document.getElementById('resultado')
+
+            resultadoDiv.innerHTML = ''
+
+            data.forEach(post => {
+                let postElement = document.createElement('div')
+                postElement.innerHTML = `
+                    <strong>Title:</strong> ${post.title}<br>
+                    <strong>Body:</strong> ${post.body}<br><br>
+                `
+                resultadoDiv.appendChild(postElement)
+            })
+        }
+    </script>
+
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+
+<!-- Formulario de contacto asincrónico: Diseña un formulario de contacto que, al enviar, utiliza AJAX para enviar los datos al servicio de prueba Beeceptor (https://beeceptor.com/) y muestra un mensaje de éxito o error sin recargar la página. -->
+
+<!-- los datos se pueden ver en https://beeceptor.com/, creando un endpoint "formulario" -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form id="formularioContacto">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje" required></textarea><br>
+
+        <button type="button" onclick="enviarFormulario()">Enviar</button>
+    </form>
+
+    <div id="mensajeResultado"></div>
+
+    <script>
+        function enviarFormulario() {
+            let nombre = document.getElementById('nombre').value
+            let email = document.getElementById('email').value
+            let mensaje = document.getElementById('mensaje').value
+
+            let data = {
+                nombre: nombre,
+                email: email,
+                mensaje: mensaje
+            };
+
+            fetch('https://formulario.free.beeceptor.com', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Error en la solicitud')
+                    }
+                    return response.json()
+                })
+                .then(data => mostrarResultado(data))
+                .catch(error => {
+                    console.error('Error:', error)
+                    mostrarResultado({ success: false })
+                })
+        }
+
+    </script>
+
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+
+<!-- Lista de tareas interactiva: Desarrolla una lista de tareas donde los usuarios pueden agregar nuevas tareas y marcarlas como completadas. Utiliza AJAX para enviar y recibir datos desde un archivo JSON local. -->
+
+<!-- creee un servidor en local y cada vez que se agrega o complete una tarea, se descarga un nuevo json con los datos actualizados -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .completed {
+            text-decoration: line-through;
+            color: #888;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Lista de Tareas</h1>
+
+    <ul id="listaTareas">
+    </ul>
+
+    <input type="text" id="nuevaTarea" placeholder="Nueva tarea">
+    <button onclick="agregarTarea()">Agregar</button>
+
+    <script>
+        let tareas = []
+
+        document.addEventListener('DOMContentLoaded', function () {
+            cargarTareas()
+        })
+
+        function cargarTareas() {
+            fetch('tareas.json')
+                .then(response => response.json())
+                .then(data => {
+                    tareas = data
+                    renderizarTareas()
+                })
+                .catch(error => console.error('Error al cargar tareas:', error))
+        }
+
+        function guardarTareasLocal() {
+            let contenido = JSON.stringify(tareas, null, 2)
+            let blob = new Blob([contenido], { type: 'application/json' })
+            let url = URL.createObjectURL(blob)
+
+            let enlaceDescarga = document.createElement('a')
+            enlaceDescarga.href = url
+            enlaceDescarga.download = 'tareas.json'
+            document.body.appendChild(enlaceDescarga)
+            enlaceDescarga.click()
+            document.body.removeChild(enlaceDescarga)
+        }
+
+        function actualizarArchivo() {
+            guardarTareasLocal()
+            URL.revokeObjectURL(enlaceDescarga.href)
+        }
+
+        function renderizarTareas() {
+            let listaTareas = document.getElementById('listaTareas')
+            listaTareas.innerHTML = ''
+
+            tareas.forEach(tarea => {
+                let li = document.createElement('li')
+                li.textContent = tarea.texto
+                if (tarea.completada) {
+                    li.classList.add('completed')
+                }
+                li.onclick = () => marcarComoCompletada(tarea.id)
+                listaTareas.appendChild(li)
+            });
+        }
+
+        function agregarTarea() {
+            let nuevaTareaInput = document.getElementById('nuevaTarea')
+            let nuevaTareaTexto = nuevaTareaInput.value.trim()
+
+            if (nuevaTareaTexto !== '') {
+                let nuevaTarea = {
+                    id: tareas.length + 1,
+                    texto: nuevaTareaTexto,
+                    completada: false,
+                }
+
+                tareas.push(nuevaTarea)
+                renderizarTareas()
+                actualizarArchivo()
+                nuevaTareaInput.value = ''
+            }
+        }
+
+        function marcarComoCompletada(idTarea) {
+            let tarea = tareas.find(t => t.id === idTarea)
+            if (tarea) {
+                tarea.completada = !tarea.completada
+                renderizarTareas()
+                actualizarArchivo()
+            }
+        }
+    </script>
+
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Actualización de contador en tiempo real: Crea una página con un botón y un contador. Al hacer clic en el botón, utiliza AJAX para incrementar el contador en el servidor (puedes usar un servicio como https://beeceptor.com/ para simular el servidor). -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Contador: <span id="contador">0</span></h1>
+    <button onclick="incrementarContador()">Incrementar</button>
+
+    <script>
+        let contador = 0;
+        const contadorElement = document.getElementById('contador');
+
+        function incrementarContador() {
+            fetch('https://jsonplaceholder.typicode.com/posts/1', {
+                method: 'PATCH',
+                body: JSON.stringify({ contador: contador + 1 }),
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8',
+                },
+            })
+                .then(response => response.json())
+                .then(data => {
+                    contador = data.contador;
+                    contadorElement.textContent = contador;
+                })
+                .catch(error => console.error('Error al incrementar el contador:', error));
+        }
+    </script>
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+
+<!-- Cambio de fondo dinámico: Construye una página web con un botón que, al hacer clic, cambia el color de fondo utilizando una solicitud AJAX a un servicio que devuelve colores aleatorios, como "http://www.colr.org/json/color/random". -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            transition: background-color 0.5s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="cambiarColorFondo()">Cambiar Color</button>
+
+    <script>
+        function cambiarColorFondo() {
+            fetch('https://www.thecolorapi.com/random', {
+                headers: {
+                    'Content-type': 'application/json',
+                },
+            })
+                .then(response => response.json())
+                .then(data => {
+                    let colorHex = data.hex.clean
+
+                    document.body.style.backgroundColor = '#' + colorHex
+                })
+                .catch(error => console.error('Error al obtener color aleatorio:', error))
+        }
+    </script>
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Lista de usuarios con API externa: Utiliza AJAX para obtener datos de un servicio de prueba de usuarios, como "https://jsonplaceholder.typicode.com/users", y muestra la lista de usuarios en tu página. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 20px;
+        }
+
+        img {
+            max-width: 100px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <ul id="listaUsuarios"></ul>
+
+    <script>
+        function cargarUsuarios() {
+            fetch('https://jsonplaceholder.typicode.com/users')
+                .then(response => response.json())
+                .then(data => {
+                    mostrarUsuarios(data)
+                })
+                .catch(error => console.error('Error al cargar usuarios:', error))
+        }
+
+        function mostrarUsuarios(usuarios) {
+            let listaUsuarios = document.getElementById('listaUsuarios')
+
+            usuarios.forEach(usuario => {
+                let li = document.createElement('li')
+
+                let img = document.createElement('img')
+                img.src = `https://i.pravatar.cc/100?u=${usuario.id}`;
+                img.alt = 'Avatar'
+
+                let nombre = document.createElement('p')
+                nombre.textContent = `Nombre: ${usuario.name}`
+
+                let correo = document.createElement('p')
+                correo.textContent = `Correo: ${usuario.email}`
+
+                li.appendChild(img)
+                li.appendChild(nombre)
+                li.appendChild(correo)
+
+                listaUsuarios.appendChild(li)
+            })
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            cargarUsuarios()
+        })
+    </script>
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+
+
+<!-- Sistema de comentarios básico: Crea un formulario de comentarios que, al enviar, utiliza AJAX para agregar el comentario a una lista en la página sin recargar. Puedes almacenar los comentarios localmente o utilizar un servicio como Beeceptor para simular el servidor. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        #commentList {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #commentList li {
+            background-color: #fff;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        #commentForm {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        label {
+            margin-bottom: 5px;
+        }
+
+        input {
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Comentarios</h2>
+    <ul id="commentList"></ul>
+
+    <form id="commentForm">
+        <label for="comment">Agregar Comentario:</label>
+        <input type="text" id="comment" required>
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const commentList = document.getElementById('commentList')
+            const commentForm = document.getElementById('commentForm')
+
+            commentForm.addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                const commentInput = document.getElementById('comment')
+                const commentText = commentInput.value
+
+                if (commentText.trim() !== '') {
+                    const newComment = document.createElement('li');
+                    newComment.textContent = commentText
+
+                    commentList.appendChild(newComment)
+
+                    commentInput.value = ''
+                }
+            });
+        });
+    </script>
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+
+<!-- Consulta de clima: Diseña una aplicación simple que permita a los usuarios ingresar una ciudad y obtenga información sobre el clima utilizando la API gratuita de OpenWeatherMap (https://openweathermap.org/current). -->
+
+<!-- <!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Clima</h1>
+    <input type="text" id="ciudadInput" placeholder="Ingrese una ciudad">
+    <button onclick="obtenerClima()">Obtener Clima</button>
+    <div id="resultado"></div>
+
+    <script>
+        function obtenerClima() {
+            const ciudad = document.getElementById('ciudadInput').value
+            const apiKey = 'aqui va la api :D'
+
+            fetch(`https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${apiKey}&lang=es`)
+                .then(response => response.json())
+                .then(data => {
+                    const resultado = document.getElementById('resultado')
+                    resultado.innerHTML = `
+                        <h2>Información del Clima para ${data.name}</h2>
+                        <p>Temperatura: ${data.main.temp}°C</p>
+                        <p>Humedad: ${data.main.humidity}%</p>
+                        <p>Descripción: ${data.weather[0].description}</p>
+                    `
+                })
+                .catch(error => {
+                    console.log('Error:', error)
+                })
+        }
+    </script>
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Galería de imágenes básica: Desarrolla una galería de imágenes que, al hacer clic en una miniatura, utiliza AJAX para cargar y mostrar la imagen a tamaño completo desde un servidor local. -->
+
+<!-- <!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        body {
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        #thumbnails {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        #thumbnails img {
+            width: 100px;
+            height: auto;
+            cursor: pointer;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            transition: border-color 0.3s ease;
+        }
+
+        #thumbnails img:hover {
+            border-color: #4CAF50;
+        }
+
+        #imagenCompleta {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        #imagenCompleta img {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Galería</h1>
+    <div id="thumbnails">
+        <img src="./px.jpg" alt="imagen 1">
+        <img src="./px2.png" alt="imagen 2">
+        <img src="./px3.jpg" alt="imagen 3">
+    </div>
+    <div id="imagenCompleta"></div>
+
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        let thumbnails = document.getElementById('thumbnails')
+        let imagenCompleta = document.getElementById('imagenCompleta')
+
+        let imagenes = {
+            './px.jpg': 'Imagen 1',
+            './px2.png': 'Imagen 2',
+            './px3.jpg': 'Imagen 3'
+        }
+
+        thumbnails.addEventListener('click', function (event) {
+            if (event.target.tagName === 'IMG') {
+                let rutaImagen = event.target.src
+                cargarImagen(rutaImagen, imagenes[rutaImagen])
+            }
+        })
+
+        function cargarImagen(rutaImagen, altText) {
+            imagenCompleta.innerHTML = `<img src="${rutaImagen}" alt="${altText}">`
+        }
+    })
+
+</script>
+
+</html> -->
+
+
+
+
+
+
+
+
+
+<!-- Lista de reproducción de canciones: Crea una página que permita a los usuarios seleccionar una canción de una lista utilizando AJAX para cargar la información de las canciones desde un archivo JSON local. -->
+
+<!-- cree un servidor con : npm install --global http-server
+y luego http-server
+en el http://localhost:8080
+
+finalmente si se puede ver la info del canciones.json -->
+
+<!-- <!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Lista</h1>
+    <select id="listaCanciones" onchange="cargarCancion()">
+    </select>
+    <div id="infoCancion"></div>
+
+    <script>
+        let urlCanciones = 'canciones.json'
+
+        window.onload = function () {
+            fetch(urlCanciones)
+                .then(response => response.json())
+                .then(data => {
+                    let select = document.getElementById('listaCanciones')
+                    data.forEach((cancion, index) => {
+                        let option = document.createElement('option')
+                        option.value = index
+                        option.text = cancion.titulo
+                        select.appendChild(option)
+                    });
+                })
+                .catch(error => console.error('Error:', error))
+        };
+
+        function cargarCancion() {
+            let select = document.getElementById('listaCanciones')
+            let index = select.value
+
+            fetch(urlCanciones)
+                .then(response => response.json())
+                .then(data => {
+                    let cancion = data[index]
+                    let div = document.getElementById('infoCancion')
+                    div.innerHTML = `
+                        <h2>${cancion.titulo}</h2>
+                        <p>Artista: ${cancion.artista}</p>
+                        <p>Álbum: ${cancion.album}</p>
+                    `
+                })
+                .catch(error => console.error('Error:', error))
+        }
+    </script>
+</body>
+
+</html> -->

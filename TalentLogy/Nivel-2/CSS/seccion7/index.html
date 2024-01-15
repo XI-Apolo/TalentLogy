@@ -1,0 +1,582 @@
+<!-- Cambia el color de texto de un enlace (<a>) cuando se pasa el mouse sobre él. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .link:hover {
+            color: rgb(255, 0, 13);
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#" class="link">Enlace</a>
+
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+
+
+<!-- Estiliza el primer elemento de una lista desordenada (<ul>) dándole un fondo de color gris. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        ul li:first-child {
+            background-color: lightgray;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+    </ul>
+
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+
+<!-- Subraya el último elemento de una lista ordenada (<ol>). -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        ol li:last-child {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <ol>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ol>
+
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+
+<!-- Haz que la primera letra de cada párrafo (<p>) sea más grande y de color rojo. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        p::first-letter {
+            font-size: 150%;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat facilis aliquid doloremque totam veritatis quasi minima culpa unde esse recusandae id reiciendis rem ipsam, mollitia ab laborum nulla! Itaque, tempore!</p>
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+
+<!-- Antes de cada elemento de una lista ordenada (<ol>), añade un icono de flecha utilizando el pseudoelemento ::before. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        ol li::before {
+            content: "\2192";
+            margin-right: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <ol>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ol>
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+
+<!-- Cuando un usuario hace clic en un enlace (<a>), haz que el fondo del enlace se vuelva amarillo. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        a:active {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#">Enlace</a>
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+
+<!-- Estiliza el último elemento de una lista desordenada (<ul>) dándole un borde de 2 píxeles y color verde. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        ul li:last-child {
+            border: 2px solid green;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+    </ul>
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+
+<!-- Cambia el color del texto de los elementos impares de una lista ordenada (<ol>). -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        ol li:nth-child(odd) {
+            color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <ol>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+        <li>Item 5</li>
+    </ol>
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+
+<!-- Estiliza el color del texto del placeholder de un campo de entrada de texto (<input type="text">). -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        input[type="text"]::placeholder {
+            color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" placeholder="Nombre">
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+
+<!-- Estiliza el fondo de un párrafo (<p>) cuando se encuentra dentro de un contenedor con la clase "destacado". -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .destacado p {
+            background-color: lightblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="destacado">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
+
+    </div>
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+<!-- Estiliza los enlaces de navegación (<a>) dentro de una barra de navegación (<nav>) de modo que el color cambie cuando el usuario pase el mouse y estén subrayados solo cuando se hacen clic. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        nav a:hover {
+            color: red;
+        }
+
+        nav a:active {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="#">Enlace 1</a>
+        <a href="#">Enlace 2</a>
+        <a href="#">Enlace 3</a>
+    </nav>
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+
+<!-- Crea una lista (<ul>) donde los elementos se desvanezcan cuando el mouse está sobre ellos y cambien de color cuando se seleccionan. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .fade-list li:hover {
+            opacity: 0.5;
+        }
+
+        .fade-list li:active {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="fade-list">
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+    </ul>
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+
+<!-- Haz que las imágenes (<img>) se desenfoquen ligeramente cuando el usuario pasa el mouse sobre ellas y se vuelvan a enfocar cuando se hace clic en ellas. -->
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        img:hover {
+            filter: blur(2px);
+        }
+
+        img:active {
+            filter: blur(0);
+        }
+    </style>
+</head>
+
+<body>
+    <img src="https://imgs.search.brave.com/hYfmkHx7igZVWh2bj8qyXifWzP_8qjW1_KJ7qrUVFB0/rs:fit:860:0:0/g:ce/aHR0cHM6Ly93LmZv/cmZ1bi5jb20vZmV0/Y2gvN2QvN2RhNzg3/NDcxNGY2ODUxYjI2/MjJlNzQxMzg0YWQy/ODAuanBlZw"
+        alt="auto rojo">
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+
+<!-- Estiliza los campos de entrada de un formulario (<input>, <textarea>) para que tengan un fondo de color cuando se enfocan y muestren un mensaje de ayuda utilizando pseudoelementos. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        input:focus,
+        textarea:focus {
+            background-color: lightyellow;
+        }
+
+        input::before,
+        textarea::before {
+            content: "Ayuda: ";
+            color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" placeholder="Nombre">
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+
+<!-- Estiliza las filas impares y pares (<tr>) de una tabla (<table>) de manera diferente, utilizando pseudoclases, como colores de fondo alternantes. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        tr:nth-child(odd) {
+            background-color: lightgray;
+        }
+
+        tr:nth-child(even) {
+            background-color: lightblue;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>Elemento 1</td>
+            <td>Elemento 2</td>
+        </tr>
+        <tr>
+            <td>Elemento 3</td>
+            <td>Elemento 4</td>
+        </tr>
+        <tr>
+            <td>Elemento 5</td>
+            <td>Elemento 6</td>
+        </tr>
+    </table>
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+
+<!-- Crea una lista (<ul>) donde cada elemento tenga un icono diferente antes del texto, utilizando pseudoelementos ::before. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        ul::before {
+            content: "\2605";
+            margin-right: 5px;
+        }
+
+        ul li:first-child::before {
+            content: "\25A0";
+        }
+
+        ul li:nth-child(2)::before {
+            content: "\25CF";
+        }
+
+        ul li:last-child::before {
+            content: "\260E";
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+    </ul>
+</body>
+
+</html> -->

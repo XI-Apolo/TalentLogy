@@ -1,0 +1,1005 @@
+<!-- Crea una Media Query que aplique un fondo de color diferente cuando el ancho de la pantalla sea menor o igual a 480px. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    body {
+        background-color: red;
+    }
+
+    @media screen and (max-width: 480px) {
+        body {
+            background-color: blue;
+        }
+    }
+</style>
+
+<body>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati adipisci a at nobis similique rem provident
+        quod voluptatum est eveniet officia blanditiis assumenda, perferendis aliquid quibusdam, inventore voluptatem
+        placeat unde.</p>
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+
+
+<!-- Utiliza una Media Query para cambiar el tamaño de fuente a 18px cuando el dispositivo esté en orientación horizontal (landscape). -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @media screen and (orientation: landscape) {
+            p {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas laudantium necessitatibus dignissimos! Optio
+        doloribus quisquam qui quasi autem iste aspernatur a. Rerum molestias fugiat voluptas corporis nisi quaerat
+        quasi similique!</p>
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+<!-- Ajusta los márgenes de un elemento cuando la resolución de la pantalla sea superior a 1200px de ancho. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @media screen and (min-width: 1200px) {
+            p {
+                margin: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <p class="elemento">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod alias nisi qui, nulla porro dicta
+        in quia. Doloribus vel repudiandae sint nesciunt velit nisi vero. Aliquam est ad eos repellendus!</p>
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+<!-- Oculta un elemento específico cuando el ancho de la pantalla sea menor o igual a 768px. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @media screen and (max-width: 768px) {
+            ul {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>elemento 1</li>
+        <li>elemento 2</li>
+        <li>elemento 3</li>
+    </ul>
+</body>
+</html> -->
+
+
+
+
+
+
+
+
+<!-- Cambia el color de fondo de un encabezado (<header>) cuando el dispositivo tenga una relación de píxeles físicos a píxeles CSS (device-pixel-ratio) de 2. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @media screen and (min-resolution: 2dppx) {
+            header {
+                background-color: red;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>titulo</h1>
+    </header>
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+<!-- Hace que un menú de navegación (<nav>) sea visible solo en dispositivos con una resolución mínima de 1024x768. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        nav {
+            display: none;
+        }
+        @media screen and (min-resolution: 1024x768) {
+            nav {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li>elemento 1</li>
+            <li>elemento 2</li>
+            <li>elemento 3</li>
+        </ul>
+    </nav>
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+<!-- Ajusta el tamaño de texto de un párrafo (<p>) cuando el ancho de la pantalla esté entre 600px y 900px. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+            
+            @media screen and (min-width: 600px) and (max-width: 900px) {
+                p {
+                    font-size: 18px;
+                }
+            }
+    </style>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti facilis temporibus quaerat accusamus eveniet recusandae quia ipsa. Deserunt debitis fugiat rerum excepturi ad numquam ex dolores minus accusantium! Architecto, eius.</p>
+
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro velit magni nulla voluptatibus corporis ad eum architecto eveniet, esse doloremque ipsa quia atque consequuntur iure, ducimus pariatur itaque expedita quisquam.
+</body>
+</html> -->
+
+
+
+
+
+
+
+
+<!-- Aplica un borde alrededor de un elemento (<div>) solo en dispositivos de impresión. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @media print {
+            div {
+                border: 1px solid black;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti facilis temporibus quaerat accusamus
+            eveniet recusandae quia ipsa. Deserunt debitis fugiat rerum excepturi ad numquam ex dolores minus
+            accusantium! Architecto, eius.</p>
+
+    </div>
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+<!-- Utiliza una Media Query para cambiar el color de texto de un botón (<button>) cuando el ancho de la pantalla sea mayor que 1200px. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @media screen and (min-width: 1200px) {
+            button {
+                color: red;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <button>hello</button>
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+<!-- Oculta una sección completa de la página cuando el dispositivo se imprime en papel. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @media print {
+            section {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti facilis temporibus quaerat accusamus
+            eveniet recusandae quia ipsa. Deserunt debitis fugiat rerum excepturi ad numquam ex dolores minus
+            accusantium! Architecto, eius.</p>
+    </section>
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+<!-- Diseño de Cuadrícula Responsivo: Crea una cuadrícula de tres columnas que se convierta en una cuadrícula de dos columnas cuando el ancho de la pantalla sea inferior a 768px y una sola columna cuando sea inferior a 480px. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .grid-container {
+            display: grid;
+            gap: 20px;
+        }
+
+        .grid-item {
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+
+
+        @media screen and (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .grid-container {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid-container">
+        <div class="grid-item">Elemento 1</div>
+        <div class="grid-item">Elemento 2</div>
+        <div class="grid-item">Elemento 3</div>
+        <div class="grid-item">Elemento 4</div>
+        <div class="grid-item">Elemento 5</div>
+        <div class="grid-item">Elemento 6</div>
+    </div>
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+<!-- Menú de Navegación Desplegable: Diseña un menú de navegación horizontal que se convierta en un menú desplegable vertical cuando el ancho de la pantalla sea inferior a 600px. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        nav {
+            background-color: #333;
+        }
+
+        .menu {
+            list-style: none;
+            display: flex;
+        }
+
+        .menu li {
+            margin-right: 20px;
+        }
+
+        .menu li:last-child {
+            margin-right: 0;
+        }
+
+        .menu a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+        }
+
+        @media screen and (max-width: 600px) {
+            .menu {
+                flex-direction: column;
+            }
+
+            .menu li {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul class="menu">
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Productos</a></li>
+            <li><a href="#">Servicios</a></li>
+            <li><a href="#">Contacto</a></li>
+            <li><a href="#">Acerca de</a></li>
+        </ul>
+    </nav>
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+<!-- Imagen de Fondo Dinámica: Usa una Media Query para cambiar la imagen de fondo de una sección cuando el ancho de la pantalla sea superior a 1200px y otra imagen cuando sea inferior a 1200px. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .dynamic-background {
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ff0000;
+        }
+
+
+        @media screen and (min-width: 1200px) {
+            .dynamic-background {
+                background-image: url('./s1.jpg');
+
+            }
+        }
+
+        @media screen and (max-width: 1199px) {
+            .dynamic-background {
+                background-image: url('./s2.jpg');
+
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="dynamic-background">
+        <h2>Sección con Fondo Dinámico</h2>
+    </section>
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+<!-- Tipografía Escalable: Escala el tamaño de fuente de todo el documento de manera proporcional al ancho de la pantalla, manteniendo un tamaño de fuente mínimo y máximo. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+
+        h1,
+        p {
+            font-size: calc(var(--min-font-size) + 2vw);
+
+        }
+
+        @media screen and (min-width: 600px) {
+
+            h1,
+            p {
+                font-size: calc(var(--min-font-size) + 3vw);
+            }
+        }
+
+        @media screen and (min-width: 1200px) {
+
+            h1,
+            p {
+                font-size: var(--max-font-size);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <h1>Titulazo</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur fugit possimus recusandae adipisci,
+            quidem qui officia laborum id a molestias facilis doloribus omnis pariatur commodi nemo quia in eos
+            voluptates!</p>
+    </div>
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+<!-- Botones Animados: Crea un botón que cambie de color y se desplace hacia la derecha cuando se coloque el mouse sobre él, pero solo cuando el dispositivo tenga una relación de píxeles físicos a píxeles CSS (device-pixel-ratio) superior a 2. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .animated-button {
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        @media screen and (min-resolution: 2dppx) {
+            .animated-button:hover {
+                background-color: #e74c3c;
+                transform: translateX(10px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+<!-- Slider de Imágenes Automático: Diseña un slider de imágenes que se desplace automáticamente a la siguiente imagen cada 5 segundos, pero que se detenga cuando el ancho de la pantalla sea inferior a 768px. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .slider {
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slide {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            animation: cambio 15s infinite;
+        }
+
+        .uno {
+            background: url('./s1.jpg');
+            animation-delay: 0s;
+        }
+
+        .dos {
+            background: url('./s2.jpg');
+            animation-delay: 5s;
+        }
+
+
+        @keyframes cambio {
+            0% {
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+            33% {
+                opacity: 1;
+            }
+
+            53% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .slide {
+                animation: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slider">
+        <div class="slide uno"></div>
+        <div class="slide dos"></div>
+    </div>
+
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+
+<!-- Encabezado Fijo: Crea un encabezado que se vuelva fijo en la parte superior de la pantalla después de hacer scroll de 200px, pero solo cuando el dispositivo esté en orientación vertical (portrait). -->
+
+<!-- <!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            position: -webkit-sticky;
+            position: sticky;
+            top: -10px;
+            /* Ajusta según sea necesario para evitar solapamiento */
+            font-size: 18px;
+            z-index: 100;
+        }
+
+        /* Agrega estilos para el cuerpo de la página */
+        section {
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Encabezado Fijo</h1>
+    </header>
+
+    <section>
+        <p>Do nulla incididunt eiusmod incididunt aute qui occaecat. Sit exercitation in adipisicing ut fugiat consequat
+            labore est et magna. Mollit officia ad enim consectetur ipsum occaecat laboris eu est aute.
+
+            Irure est ipsum culpa ullamco ea exercitation laborum Lorem dolore ea Lorem consectetur dolor et. Et dolore
+            adipisicing amet velit. Qui ullamco ex elit consequat sint mollit id in nisi in exercitation fugiat veniam.
+            Velit culpa qui incididunt ut aliqua. Velit nostrud do incididunt ipsum ullamco excepteur nulla deserunt
+            aliquip. Ad sunt minim tempor ipsum exercitation sint cupidatat sit magna.
+
+            Ex mollit pariatur cillum ullamco excepteur ad amet deserunt commodo minim nostrud elit ad tempor. Minim
+            proident qui sunt consequat aliquip irure proident elit et consequat culpa excepteur dolor. Consequat nisi
+            mollit adipisicing ipsum mollit culpa ea.
+
+            Lorem officia ut et dolor officia ut. Sit officia adipisicing ipsum ipsum magna deserunt proident fugiat
+            nisi ut. Ex tempor cillum eu ullamco incididunt reprehenderit. Fugiat ut do est ex proident Lorem esse
+            laborum cupidatat id cupidatat irure. Eu elit aliquip anim sint ullamco. Irure do eiusmod ullamco anim
+            mollit proident ea laborum nostrud eiusmod. Consequat ea anim ullamco duis consequat proident.
+
+            Et culpa dolor officia deserunt eu anim eu aliqua officia minim qui nisi cillum. Et nostrud aliqua officia
+            nulla labore mollit aliquip aute do est ex. Dolor enim adipisicing sunt nostrud ex dolor laboris aute enim
+            aliqua nisi. Aute sit laborum non aliquip. Officia nostrud amet eiusmod enim non culpa minim fugiat anim
+            consequat. Nulla aute aliqua culpa esse veniam quis est velit.
+
+            Voluptate labore aliquip do ut magna tempor consectetur sit sit elit. Tempor laboris officia et elit fugiat
+            et. Occaecat dolore occaecat dolor deserunt dolore sint eu cillum amet mollit incididunt elit nisi. Elit
+            esse id ex id ea ad tempor reprehenderit nisi commodo sint cillum quis. Excepteur duis est nulla consectetur
+            proident consectetur incididunt anim consectetur tempor ullamco culpa. Duis elit incididunt ut aliquip esse
+            consectetur irure pariatur.
+
+            Reprehenderit laborum ad culpa est do do. Fugiat duis laborum anim qui magna incididunt et ea velit aliqua.
+            Proident incididunt ullamco deserunt et occaecat velit aliquip id excepteur sunt officia velit reprehenderit
+            occaecat. Consectetur duis ullamco id commodo. Lorem id nisi laborum officia consectetur adipisicing
+            proident.
+
+            Sunt ad et minim mollit pariatur do dolore elit magna ad. Non nostrud dolore magna pariatur enim ad. Quis in
+            qui magna cupidatat cupidatat fugiat. Occaecat esse elit aute eu sunt laboris occaecat eu laborum elit est
+            pariatur.
+
+            Qui ullamco laborum eu culpa irure ad et aliquip laboris nulla. Culpa dolore adipisicing et consequat fugiat
+            veniam consequat aliqua est incididunt tempor fugiat enim dolore. Et ullamco velit dolore exercitation.
+
+            Eiusmod ea fugiat consectetur dolor consectetur incididunt Lorem deserunt mollit eu est officia. Esse anim
+            Lorem quis tempor in ut ipsum duis consequat ad. Elit Lorem consectetur cupidatat est et est duis.</p>
+        <br><br>
+
+        <p>Eiusmod aliquip cillum ut nisi. Mollit nostrud eu aute do id id aliqua ullamco nulla ipsum ex. Fugiat commodo
+            dolore enim labore proident Lorem eiusmod ullamco quis dolor Lorem ex. Ullamco laborum qui dolor sunt minim
+            exercitation ipsum aute pariatur aliquip occaecat magna minim. Velit voluptate laborum amet tempor ut
+            cupidatat culpa culpa labore labore. Ad consectetur nulla eiusmod dolore aliqua fugiat duis cillum non
+            aliquip culpa amet culpa. Sit ad deserunt aliqua eu et amet irure sunt fugiat.
+
+            Do magna excepteur consectetur occaecat adipisicing sunt exercitation nulla anim mollit elit tempor culpa
+            qui. Eu elit ut nisi id quis velit cupidatat cillum elit aute esse. Esse laborum id enim pariatur. Qui sint
+            enim in do consequat eiusmod dolore elit aliqua officia tempor reprehenderit nisi Lorem. Tempor aliqua
+            reprehenderit officia laborum voluptate est laborum reprehenderit. Adipisicing fugiat ullamco non
+            adipisicing nulla aliquip elit esse excepteur. Officia magna do velit laborum fugiat in sit occaecat est
+            sit.
+
+            Mollit cupidatat do ullamco incididunt et ad do eu nostrud laborum adipisicing. Tempor sit commodo labore
+            quis. Et ullamco proident pariatur pariatur. Ad culpa sit ullamco laboris reprehenderit. Aliquip proident
+            esse fugiat officia qui veniam pariatur adipisicing exercitation labore in. Ea excepteur Lorem deserunt
+            commodo in minim. Magna dolor ullamco eu qui sint sit ut est consectetur.
+
+            Consectetur duis do magna ullamco minim commodo ex. Nulla eu magna velit Lorem magna. Aliquip mollit
+            consectetur minim reprehenderit laboris. Aliqua pariatur ea non dolor ad laborum ex elit. Dolore deserunt
+            proident dolor mollit id aliquip veniam deserunt commodo id eu veniam laborum reprehenderit. Dolor irure
+            ullamco ullamco cupidatat aliqua velit consectetur ullamco labore nostrud ex deserunt. Laborum sit enim ad
+            aliqua aute exercitation adipisicing laborum ipsum adipisicing nostrud reprehenderit laborum eiusmod.
+
+            Ipsum amet pariatur ad minim fugiat esse ut ut sit laboris aliquip consequat. Velit non elit adipisicing
+            proident cillum aliqua labore sit eiusmod voluptate reprehenderit. Qui laborum enim pariatur id ex nostrud
+            minim fugiat occaecat enim dolor et. Eiusmod duis nisi aute commodo reprehenderit aliqua sunt.
+
+            Proident ex mollit officia consectetur sint laborum id enim proident. Cupidatat qui officia eu non mollit eu
+            eiusmod anim consectetur aute tempor. Est esse ipsum incididunt culpa nostrud qui duis officia quis. Velit
+            tempor fugiat labore ut aute fugiat id. Sunt qui in et et proident Lorem dolor voluptate aliquip incididunt
+            nulla proident.
+
+            Esse consectetur aliquip velit labore dolor dolore sunt. Aliquip ad id labore incididunt officia. Culpa qui
+            non nostrud qui cupidatat veniam nostrud do. Eiusmod officia officia Lorem sit labore ullamco occaecat anim
+            esse ex.
+
+            Est adipisicing ea eu minim cillum adipisicing nisi. Labore reprehenderit nulla sint ea nostrud
+            reprehenderit labore non et ad velit fugiat. Exercitation id labore cillum ipsum mollit sunt esse commodo ut
+            mollit occaecat minim id.
+
+            Ex elit sit proident ad Lorem nulla id aute dolore aliqua dolore deserunt aliquip. Velit sint voluptate
+            pariatur voluptate consectetur ex. Qui cillum officia minim velit minim voluptate aliquip incididunt laborum
+            nulla. Proident adipisicing nisi consectetur commodo esse et est nisi qui ea. Sit velit veniam et ad
+            occaecat id eiusmod duis. Laborum reprehenderit sint ipsum irure aliqua deserunt do ex consectetur proident
+            duis est in esse.
+
+            Mollit proident anim consectetur elit fugiat ullamco adipisicing non id quis qui magna. Elit culpa eu dolore
+            consequat ea cillum labore ex eu ad. Et nulla ipsum cillum nostrud dolore labore pariatur dolor nulla
+            ullamco nostrud tempor do do. Id ea esse aliquip sint officia excepteur officia non reprehenderit magna id
+            nostrud. Esse dolor aliqua incididunt tempor pariatur cillum eiusmod sunt magna id duis duis quis ex. Culpa
+            magna velit reprehenderit magna tempor anim. Consequat nulla ad reprehenderit laboris elit sit pariatur
+            commodo magna incididunt.</p>
+    </section>
+
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+<!-- 
+Elementos Emergentes Dinámicos: Diseña un elemento emergente que se muestre en la esquina inferior derecha de la pantalla cuando el ancho de la pantalla sea mayor a 1200px, y en la esquina superior izquierda cuando sea menor a 1200px. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #emergente {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+        }
+
+        @media (max-width: 1200px) {
+            #emergente {
+                top: 0;
+                left: 0;
+                background-color: #333;
+                color: #fff;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="emergente">Elemento Emergente</div>
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+
+<!-- Estilo de Enlaces según Dispositivo: Aplica estilos específicos a los enlaces (<a>) que contengan la palabra "info" cuando el dispositivo sea una impresora (print), pero estilos diferentes cuando sea una pantalla (screen). -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        a {
+            color: blue;
+            text-decoration: none;
+        }
+
+        @media print {
+            a[href$="info"] {
+                color: green;
+            }
+        }
+
+        @media screen {
+            a[href$="info"] {
+                color: red;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#">Enlace Normal</a>
+    <a href="#">Enlace con info</a>
+    <a href="#">Otro enlace</a>
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+
+
+<!-- Animación de Rotación en Dispositivos de Pantalla Táctil: Crea un elemento que rote 45 grados al hacer clic en él solo en dispositivos de pantalla táctil (pointer: coarse). -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotating Element</title>
+
+    <style>
+        #rotatingElement {
+            width: 100px;
+            height: 100px;
+            background-color: #3498db;
+            cursor: pointer;
+            transition: transform 0.5s ease;
+        }
+
+        @media (pointer: coarse) {
+            #rotatingElement {
+                transform: rotate(45deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="rotatingElement"></div>
+</body>
+
+</html> -->

@@ -1,0 +1,386 @@
+<!-- Manipulación de Texto: Selecciona un elemento de texto en tu página y cambia su contenido utilizando JavaScript. Por ejemplo, cambia el texto de un párrafo o un encabezado. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="texto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, consequuntur fuga, eligendi maiores
+        minus id ducimus earum laboriosam excepturi necessitatibus, nisi expedita autem provident eos consectetur quidem
+        neque magni. Omnis.</p>
+</body>
+<script>
+    let texto = document.getElementById('texto')
+
+    texto.textContent = 'este es el nuevo texto.'
+</script>
+
+</html> -->
+
+
+
+
+
+
+
+
+<!-- Agregar y Eliminar Elementos: Crea un nuevo elemento (por ejemplo, un párrafo o una lista) dinámicamente con JavaScript y agrégalo al DOM. Luego, elimina un elemento existente. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+
+    let nuevoT = document.createElement('p')
+    nuevoT.textContent = 'hola mundo'
+    document.body.appendChild(nuevoT)
+
+    let otroT = document.createElement('p')
+    otroT.textContent = 'hola mundo 2 '
+    document.body.appendChild(otroT)
+
+
+    otroT.classList.add('eliminar-texto')
+    let eliminarT = document.querySelector('.eliminar-texto')
+
+    eliminarT.remove()
+
+</script>
+
+</html> -->
+
+
+
+
+
+
+
+
+<!-- Manipulación de Atributos: Selecciona un elemento que tenga un atributo (como un enlace con un atributo href) y cambia el valor del atributo utilizando JavaScript. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="https://google.com" id="lin">google</a>
+</body>
+
+<script>
+    const camb = document.getElementById('lin')
+
+    camb.textContent = 'portafolio'
+    camb.href = 'https://apolo-x1.netlify.app'
+</script>
+
+</html> -->
+
+
+
+
+
+
+
+
+<!-- Crear y Manipular Listas: Crea una lista (ul o ol) vacía en el DOM con JavaScript. Luego, agrega elementos a la lista dinámicamente. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    
+</body>
+
+<script>
+    let body = document.body
+    let lista = document.createElement('ul')
+    let elementos = ['elemento 1', 'elemento 2', 'elemento 3', 'elemento 4', 'elemento 5', 'elemento 6', 'elemento 7', 'elemento 8', 'elemento 9', 'elemento 10']
+
+    elementos.forEach(elemento => {
+        let li = document.createElement('li')
+        li.textContent = elemento
+        lista.appendChild(li)
+    })
+
+    body.appendChild(lista)
+</script> -->
+
+</html>
+
+
+
+
+
+
+
+
+<!-- Comentarios Dinámicos: Utiliza JavaScript para agregar un comentario dinámico a tu código HTML. Por ejemplo, puedes agregar un comentario que indique la fecha y hora en que se realizó una acción específica. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+    let comentario = document.createComment('mira este gran comentario')
+
+    document.body.appendChild(comentario)
+</script>
+
+</html> -->
+
+
+
+
+
+
+
+
+<!-- Cambiar Estilos Dinámicamente: Selecciona un elemento y cambia su estilo (por ejemplo, el color de fondo o el tamaño del texto) utilizando JavaScript en respuesta a algún evento, como un clic en un botón. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            background-color: rgb(255, 255, 255);
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="cambiarColor()">cambiar color</button>
+</body>
+
+<script>
+    function cambiarColor(){
+        let body = document.body
+        body.style.backgroundColor = 'rgb(27, 27, 27)'
+    }
+</script>
+
+</html> -->
+
+
+
+
+
+
+
+
+<!-- Manejar Eventos: Asigna un manejador de eventos a un elemento (por ejemplo, un botón) y realiza alguna acción cuando ocurra el evento (por ejemplo, mostrar un mensaje en la consola cuando se haga clic en el botón). -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="botonGood">click</button>
+</body>
+
+<script>
+    let boton = document.getElementById('botonGood')
+
+    boton.addEventListener('click', () => {
+        alert('hola mundo')
+    })
+</script>
+
+</html> -->
+
+
+
+
+
+
+
+
+<!-- Aplicación de Lista de Tareas Interactiva: Crea una aplicación simple de lista de tareas. Los usuarios pueden agregar tareas, marcarlas como completadas y eliminarlas. Utiliza nodos de texto y elementos de lista. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="#" id="formulario">
+        <input type="text" id="nTarea" placeholder="nueva tarea" required>
+        <button type="button" onclick="agregarTarea()">agregar</button>
+    </form>
+
+    <ul id="listaTareas">
+
+    </ul>
+</body>
+
+<script>
+    function agregarTarea() {
+        let nuevaTareaI = document.getElementById('nTarea');
+        let nuevaTareaT = nuevaTareaI.value;
+
+
+        if (nuevaTareaT.trim() != '') {
+            let nTareaElemento = document.createElement('li')
+            let tAera = document.createTextNode(nuevaTareaT)
+
+            nTareaElemento.appendChild(tAera)
+
+            document.getElementById('listaTareas').appendChild(nTareaElemento)
+
+            nuevaTareaI.value = ''
+        }
+    }
+</script>
+
+</html> -->
+
+
+
+
+
+
+
+
+<!-- Galería de Imágenes Dinámica: Crea una galería de imágenes en tu página. Utiliza JavaScript para cambiar dinámicamente las imágenes y sus descripciones cuando se hace clic en miniaturas. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Imágenes</title>
+    <style>
+        .thumbnail {
+            width: 100px;
+            height: 100px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThmqVDNQo_8X4_R9zHcQp8OjzMJGH3aYJcVA&usqp=CAU"
+        alt="Imagen 1" class="thumbnail"
+        onclick="cambiarImagen('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThmqVDNQo_8X4_R9zHcQp8OjzMJGH3aYJcVA&usqp=CAU', 'Lorem ipsu')">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxo-ne7ZXCOLxT-OGXPwkhWAtP-qe67A8Kmw&usqp=CAU"
+        alt="Imagen 2" class="thumbnail"
+        onclick="cambiarImagen('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxo-ne7ZXCOLxT-OGXPwkhWAtP-qe67A8Kmw&usqp=CAU', 'Dolor sit amet')">
+
+
+    <div id="imagenPrincipal">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThmqVDNQo_8X4_R9zHcQp8OjzMJGH3aYJcVA&usqp=CAU"
+            alt="Imagen Principal">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus dolore consequatur eaque pariatur
+            exercitationem ratione quidem aut ipsa ab. Cupiditate libero facere dignissimos officia esse debitis
+            mollitia, modi commodi expedita!</p>
+    </div>
+
+    <script>
+        function cambiarImagen(src, descripcion) {
+            const imagenPrincipal = document.getElementById('imagenPrincipal').getElementsByTagName('img')[0];
+            const descripcionImagen = document.getElementById('imagenPrincipal').getElementsByTagName('p')[0];
+
+            imagenPrincipal.src = src;
+            descripcionImagen.textContent = descripcion;
+        }
+    </script>
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+
+
+<!-- Actualización de Contenido en Tiempo Real: Utiliza JavaScript para actualizar dinámicamente el contenido de tu página en tiempo real. Esto podría ser información como la hora actual, la temperatura o cualquier dato que pueda cambiar. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="horaActual"></h1>
+
+    <script>
+        function obtenerHoraActual() {
+            const ahora = new Date();
+            const horas = ahora.getHours().toString().padStart(2, '0');
+            const minutos = ahora.getMinutes().toString().padStart(2, '0');
+            const segundos = ahora.getSeconds().toString().padStart(2, '0');
+
+            return `${horas}:${minutos}:${segundos}`;
+        }
+
+        function actualizarHora() {
+            const horaActualElemento = document.getElementById('horaActual');
+            horaActualElemento.textContent = obtenerHoraActual();
+        }
+
+        setInterval(actualizarHora, 1000);
+
+    </script>
+</body>
+
+</html> -->

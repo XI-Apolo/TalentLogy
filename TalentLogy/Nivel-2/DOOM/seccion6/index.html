@@ -1,0 +1,382 @@
+<!-- Cambiar el Texto de un Elemento: Selecciona un elemento de texto y cambia su contenido dinámicamente utilizando JavaScript. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p class="texto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia voluptatem et, ea libero adipisci consectetur ullam, numquam amet debitis enim illo eaque officia facere ducimus possimus recusandae quam voluptas iusto.</p>
+</body>
+
+<script>
+    const texto = document.querySelector('.texto')
+    texto.textContent = 'Hola Mundo'
+</script>
+
+</html> -->
+
+
+
+
+
+
+
+
+<!-- Agregar un Nuevo Elemento: Crea un nuevo párrafo (<p>) y agrégalo al final del cuerpo (<body>) de la página. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+    let body = document.querySelector('body')
+    let parrafo = document.createElement('p')
+    parrafo.textContent = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia voluptatem et, ea libero adipisci consectetur ullam.'
+    body.appendChild(parrafo)
+</script>
+
+</html> -->
+
+
+
+
+
+
+
+
+<!-- Modificar Atributos de Imagen: Selecciona una imagen y cambia su fuente (src) dinámicamente al hacer clic en un botón. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="https://images.unsplash.com/photo-1431440869543-efaf3388c585?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8fA%3D%3D"
+        alt="imagen">
+
+    <button id="cambiarImagen">Cambiar</button>
+
+    <script>
+        let imagen = document.querySelector('img')
+        let boton = document.querySelector('#cambiarImagen')
+
+        boton.addEventListener('click', () => {
+            imagen.src = 'https://images.unsplash.com/photo-1503389152951-9f343605f61e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8NXx8fGVufDB8fHx8fA%3D%3D';
+            imagen.alt = 'Nueva imagen'
+        });
+    </script>
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+<!-- Eliminar un Elemento: Agrega un botón que, al hacer clic, elimine un elemento específico de la página. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+        <li>Elemento 4</li>
+        <li>Elemento 5</li>
+    </ul>
+</body>
+
+<script>
+    let lista = document.querySelector('ul')
+    let elementos = document.querySelectorAll('li')
+
+    elementos.forEach(elemento => {
+        elemento.addEventListener('click', () => {
+            lista.removeChild(elemento)
+        });
+    });
+</script>
+
+</html> -->
+
+
+
+
+
+
+
+
+<!-- Cambiar Clases Dinámicamente: Asigna un event listener a un botón. Al hacer clic, cambia la clase de un elemento, alterando su estilo. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .texto {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ab repellendus molestiae exercitationem
+        necessitatibus accusamus illum qui, rerum soluta pariatur, esse quos totam nulla commodi laborum nam saepe
+        adipisci laboriosam.</p>
+    <button id="cambiarClase">Cambiar</button>
+</body>
+
+<script>
+    let parrafo = document.querySelector('p')
+    let boton = document.querySelector('#cambiarClase')
+
+    boton.addEventListener('click', () => {
+        parrafo.classList.toggle('texto')
+    })
+</script>
+
+</html> -->
+
+
+
+
+
+
+
+
+<!-- Crear una Lista Dinámica: Crea una lista (<ul> o <ol>) vacía. Agrega elementos a la lista utilizando un formulario y JavaScript. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+
+    </ul>
+    <form action="#">
+        <input type="text" placeholder="texto" required>
+        <button>Agregar</button>
+    </form>
+</body>
+
+<script>
+    let lista = document.querySelector('ul')
+    let formulario = document.querySelector('form')
+
+    formulario.addEventListener('submit', (e) => {
+        e.preventDefault()
+        let input = document.querySelector('input')
+        let texto = input.value
+        let elemento = document.createElement('li')
+        elemento.textContent = texto
+        lista.appendChild(elemento)
+        input.value = ''
+    });
+
+
+
+</script>
+
+</html> -->
+
+
+
+
+
+
+
+
+<!-- Actualizar Contenido de Formulario: Crea un formulario simple y utiliza JavaScript para actualizar dinámicamente el contenido en tiempo real mientras el usuario escribe. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="#">
+        <input type="text" placeholder="Nombre" required>
+        <input type="text" placeholder="Apellido" required>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Contraseña" required>
+        <input type="submit" value="Enviar datos">
+    </form>
+
+    <script>
+        let formulario = document.querySelector('form');
+        let inputs = document.querySelectorAll('input');
+
+        inputs.forEach(input => {
+            input.addEventListener('blur', () => {
+                console.log(input.value);
+            });
+        });
+    </script>
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+
+<!-- Estilo Dinámico al Pasar el Ratón: Asigna event listeners a varios elementos. Cambia el estilo de cada elemento cuando el ratón está sobre él y restaura el estilo original cuando el ratón sale. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>elemento</li>
+        <li>elemento 2</li>
+        <li>elemento 3</li>
+    </ul>
+</body>
+
+<script>
+    let lista = document.querySelector('ul')
+    let elementos = document.querySelectorAll('li')
+
+    elementos.forEach(elemento => {
+        elemento.addEventListener('mouseover', () => {
+            elemento.style.color = 'red'
+        })
+        elemento.addEventListener('mouseout', () => {
+            elemento.style.color = 'black'
+        })
+    })
+
+
+</script>
+
+</html> -->
+
+
+
+
+
+
+
+
+<!-- Animación al Hacer Clic: Asigna un evento a un botón para que, al hacer clic, un elemento experimente una animación o cambio de estilo gradual. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>click</button>
+</body>
+
+<script>
+    let boton = document.querySelector('button')
+
+    boton.addEventListener('click', () => {
+        boton.style.backgroundColor = 'red'
+        boton.style.color = 'white'
+        boton.style.transition = 'all 1s'
+    })
+</script>
+
+</html> -->
+
+
+
+
+
+
+
+
+<!-- Actualizar Contenido con Datos Externos: Utiliza la función fetch para obtener datos de una API externa y actualiza dinámicamente el contenido de la página con esos datos. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <h1>Nombre</h1>
+        <p>correo</p>
+        <img src="" alt="imagen perfil">
+    </div>
+</body>
+
+<script>
+    let nombre = document.querySelector('h1')
+    let parrafo = document.querySelector('p')
+    let imagen = document.querySelector('img')
+
+    fetch('https://randomuser.me/api/')
+        .then(res => res.json())
+        .then(data => {
+            nombre.textContent = `${data.results[0].name.first} ${data.results[0].name.last}`
+            parrafo.textContent = data.results[0].email
+            imagen.src = data.results[0].picture.large
+        })
+</script>
+
+</html> -->

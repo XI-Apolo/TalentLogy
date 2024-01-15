@@ -1,0 +1,332 @@
+<!-- Crea dos reglas CSS para establecer el color del texto de un elemento h1. Una regla debe establecer el color en rojo y la otra en azul.Explica cuál de las dos reglas tendrá prioridad. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        h1 {
+            color: red;
+        }
+
+        .otra-clase h1 {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>hola</h1>
+    <h1 class="otra-clase">hola</h1>
+</body>
+
+</html> -->
+
+<!-- .otra-clase h1 tiene mayor especificidad que la primera regla, ya que incluye una clase adicional. -->
+
+
+
+
+
+
+
+
+<!-- Crea tres reglas CSS para establecer el color del texto de un elemento p. Una regla debe establecer el color en rojo para todos los elementos p, la otra en azul para todos los elementos p con la clase mi-clase y la tercera en verde para todos los elementos p con el id mi-id.Explica cuál de las tres reglas tendrá prioridad. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        p {
+            color: red;
+        }
+
+        p.m{
+            color: blue;
+        }
+
+        #i{
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <p>hola</p>
+    <p class="m">hola</p>
+    <p id="i">hola</p>
+</body>
+
+</html> -->
+
+<!-- #i tienen mayor especificidad que las reglas de clase .m y de tipo p. -->
+
+
+
+
+
+
+<!-- Crea una regla CSS para establecer el color del texto de un elemento h1 con la clase mi-clase. Explica cuál será el color del texto del elemento h1. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        h1.m {
+            color: #ff4500;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="m">hola</h1>
+</body>
+
+</html> -->
+
+
+<!-- el texto del elemento h1 con la clase mi-clase se establece en un tono de naranja -->
+
+
+
+
+
+<!-- Crea una regla CSS para establecer el color del texto de todos los elementos h1 con la clase mi-clase.  Explica cuál será el color del texto de todos los elementos h1. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        h1.c {
+            color: #008000;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="c">hello, hello hello</h1>
+</body>
+
+</html> -->
+
+<!-- todos los elementos h1 que tengan la clase mi-clase se vuelven verde -->
+
+
+
+
+
+
+<!-- Crea una regla CSS para establecer el color del texto de todos los elementos p con la clase mi-clase. Explica cuál será el color del texto de todos los elementos p. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        p.mi-clase {
+            color: #ff0000;
+        }
+    </style>
+</head>
+
+<body>
+    <p class="mi-clase">hola</p>
+</body>
+
+</html> -->
+
+<!-- todos los elementos <p> que tengan la clase "mi-clase" tendrán el color de texto -->
+
+
+
+
+
+
+<!-- Crea tres reglas CSS para establecer el tamaño de la fuente de un elemento p. Una regla debe establecer el tamaño en 16px para todos los elementos p, la otra en 20px para todos los elementos p con la clase mi-clase y la tercera en 24px para todos los elementos p con el id mi-id.
+Explica cuál de las tres reglas tendrá prioridad. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        p {
+            font-size: 16px;
+        }
+
+
+        p.c {
+            font-size: 20px;
+        }
+
+
+        p#i {
+            font-size: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <p>hola</p>
+    <p class="c">hola</p>
+    <p id="i">hola</p>
+</body>
+
+</html> -->
+
+<!-- La regla 3 (p#i) tiene la mayor especificidad al seleccionar elementos por id.
+La regla 2 (p.c) tiene una especificidad menor al seleccionar por clase.
+La regla 1 (p) tiene la menor especificidad al seleccionar todos los elementos <p>. -->
+
+
+
+
+
+
+<!-- Crea una regla CSS para establecer el tamaño de la fuente de un elemento h1 con la clase mi-clase.
+Explica cuál será el tamaño de la fuente del elemento h1. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        h1.c {
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="c">hola</h1>
+</body>
+
+</html> -->
+
+<!-- La regla selecciona elementos <h1> que tienen la clase "c". -->
+
+
+
+
+
+
+<!-- Crea una regla CSS para establecer el tamaño de la fuente de todos los elementos h1 con la clase mi-clase.
+Explica cuál será el tamaño de la fuente de todos los elementos h1. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        h1.mi-clase {
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="mi-clase">hola</h1>
+</body>
+
+</html> -->
+
+<!-- La regla selecciona todos los elementos <h1> que tienen la clase "c". -->
+
+
+
+
+
+
+<!-- Crea una regla CSS para establecer el tamaño de la fuente de todos los elementos p con la clase mi-clase.
+Explica cuál será el tamaño de la fuente de todos los elementos p. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        p.mi-clase {
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <p class="mi-clase">hola</p>
+</body>
+
+</html> -->
+
+<!-- La regla selecciona todos los elementos <p> que tienen la clase "mi-clase". -->
+
+
+
+
+
+
+<!-- Crea una regla CSS para establecer el tamaño de la fuente de todos los elementos h1 y p con la clase mi-clase.
+Explica cuál será el tamaño de la fuente de todos los elementos h1 y p. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        h1.mi-clase,
+        p.mi-clase {
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="mi-clase">hola</h1>
+    <p class="mi-clase">hola</p>
+</body>
+
+</html> -->
+
+<!-- La regla selecciona tanto los elementos <h1> como los elementos <p> que tienen la clase "mi-clase". -->

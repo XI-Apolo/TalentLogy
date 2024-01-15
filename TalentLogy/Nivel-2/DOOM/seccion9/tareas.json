@@ -1,0 +1,12 @@
+[
+    {
+        "id": 1,
+        "texto": "Comprar comida",
+        "completada": false
+    },
+    {
+        "id": 2,
+        "texto": "Pagar recibos",
+        "completada": false
+    }
+]

@@ -1,0 +1,677 @@
+<!-- Galería de Imágenes con Descripciones: Crea una galería de imágenes con miniaturas y descripciones. Al hacer clic en una miniatura, la imagen debería mostrarse en tamaño completo junto con su descripción. Utiliza eventos para cambiar dinámicamente el contenido. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <section class="galeria">
+        <div class="imagenes">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQq84xbTqkSf0Vax8BK9BWVIq0UpVuR3hzu9Q&usqp=CAU"
+                alt="imagen 1" data-index="0">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoLMkh8N6YQdL-TeeGyCZLrNPuKYJDxv-cgA&usqp=CAU"
+                alt="imagen 2" data-index="1">
+        </div>
+
+        <div class="preview">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQq84xbTqkSf0Vax8BK9BWVIq0UpVuR3hzu9Q&usqp=CAU"
+                alt="imagen principal">
+            <div class="descripcion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum modi deserunt
+                error deleniti accusamus ut voluptatem itaque, assumenda, pariatur quo placeat voluptatum fugit
+                quibusdam quidem, ratione possimus cum iste sapiente?</div>
+
+        </div>
+
+    </section>
+
+</body>
+ 
+<script>
+
+    let imagenes = document.querySelectorAll('.imagenes img')
+    let preview = document.querySelector('.preview img')
+    let description = document.querySelector('.preview .descripcion')
+
+    function cambiarPreview(event){
+        let index = event.target.getAttribute('data-index')
+
+        preview.src = `imagen${parseInt(index) + 1}.jpg`
+        preview.alt = `Imagen ${index}`
+        description.textContent = `Descripción de la imagen ${index}`
+    }
+
+    imagenes.forEach(imagen => {
+        imagen.addEventListener('click', cambiarPreview)  
+    })
+
+</script>
+
+</html> -->
+
+
+
+
+
+
+
+
+<!-- Reproductor de Música Interactivo: Desarrolla un reproductor de música interactivo. Permite a los usuarios reproducir, pausar y cambiar de canción. Muestra dinámicamente el título y el artista de la canción actualizando el DOM. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    .titulo {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .autor {
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    .reproductor {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .reproductor button {
+        margin: 10px;
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+        background-color: #000;
+        color: #fff;
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    .reproductor button:hover {
+        cursor: pointer;
+        background-color: #fff;
+        color: #000;
+    }
+</style>
+
+<body>
+
+    <section>
+        <div class="titulo"></div>
+        <div class="autor"></div>
+        <div class="reproductor">
+            <button class="play">Play</button>
+            <button class="pause">Pause</button>
+            <button class="next">Next</button>
+            <button class="prev">Prev</button>
+        </div>
+        <audio src="" class="audio" controls></audio>
+    </section>
+
+    <script>
+        let titulo = document.querySelector('.titulo')
+        let autor = document.querySelector('.autor')
+        let play = document.querySelector('.play')
+        let pause = document.querySelector('.pause')
+        let next = document.querySelector('.next')
+        let prev = document.querySelector('.prev')
+
+        let audio = document.querySelector('.audio')
+        let canciones = [
+            {
+                titulo: 'Mistake',
+                autor: 'NF',
+                musica: './nf-m.mp3'
+            },
+            {
+                titulo: 'Running',
+                autor: 'NF',
+                musica: './nf-r.mp3'
+            }
+        ];
+
+        let cancionActual = 0
+
+        function reproducir() {
+            titulo.textContent = canciones[cancionActual].titulo
+            autor.textContent = canciones[cancionActual].autor
+            audio.src = canciones[cancionActual].musica
+            audio.load()
+            audio.play()
+        }
+
+        function pausar() {
+            audio.pause()
+        }
+
+        function reproducirSiguiente() {
+            if (cancionActual < canciones.length - 1) {
+                cancionActual++
+            } else {
+                cancionActual = 0;
+            }
+            reproducir();
+        }
+
+        function reproducirAnterior() {
+            if (cancionActual > 0) {
+                cancionActual--
+            } else {
+                cancionActual = canciones.length - 1
+            }
+            reproducir()
+        }
+
+        play.addEventListener('click', reproducir)
+        pause.addEventListener('click', pausar)
+        next.addEventListener('click', reproducirSiguiente)
+        prev.addEventListener('click', reproducirAnterior)
+    </script>
+
+</body>
+
+
+
+</html> -->
+
+
+
+
+
+
+
+
+<!-- Aplicación de Formulario Dinámico: Diseña un formulario que se expanda dinámicamente al hacer clic en un botón "Agregar Campo". Los usuarios deben poder completar y enviar el formulario. Utiliza eventos para gestionar la interacción y manipula el DOM para agregar o eliminar campos. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form action="#">
+        <div class="campos">
+            <input type="text" name="nombre" id="nombre">
+            <input type="text" name="apellido" id="apellido">
+        </div>
+        <button type="button" id="agregar">Agregar Campo</button>
+        <button type="submit">Enviar</button>
+    </form>
+
+</body>
+
+<script>
+
+    let agregar = document.querySelector('#agregar')
+    let campos = document.querySelector('.campos')
+
+    function agregarCampo() {
+        let input = document.createElement('input')
+        input.type = 'text'
+        input.name = 'campo'
+        input.id = 'campo'
+        campos.appendChild(input)
+    }
+
+    agregar.addEventListener('click', agregarCampo)
+
+    // mostrar los campos enviados en un console.log()
+    let form = document.querySelector('form')
+    form.addEventListener('submit', (event) => {
+        event.preventDefault()
+        let inputs = document.querySelectorAll('input')
+        let datos = []
+        inputs.forEach(input => {
+            datos.push(input.value)
+        })
+        console.log(datos)
+    })
+
+
+
+</script>
+
+</html> -->
+
+
+
+
+
+
+
+
+<!-- Visualizador de Datos en Tabla: Construye un visualizador de datos en forma de tabla. Los usuarios pueden agregar y eliminar filas, y la tabla debe actualizarse en consecuencia. Utiliza eventos para gestionar la interacción del usuario. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+            </tr>
+        </thead>
+        <tbody class="cuerpo">
+            <tr>
+                <td>David</td>
+                <td>Guerra</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button id="agregarFila">Agregar Fila</button>
+    <button id="eliminarFila">Eliminar Fila</button>
+
+    <script>
+        const agregarFilaBtn = document.getElementById('agregarFila')
+        const eliminarFilaBtn = document.getElementById('eliminarFila')
+        const cuerpoTabla = document.querySelector('.cuerpo')
+
+        agregarFilaBtn.addEventListener('click', () => {
+            const nuevaFila = document.createElement('tr')
+            nuevaFila.innerHTML = `
+                <td>Apolo</td>
+                <td>X1</td>
+            `;
+            cuerpoTabla.appendChild(nuevaFila)
+        })
+
+        eliminarFilaBtn.addEventListener('click', () => {
+            const filas = cuerpoTabla.getElementsByTagName('tr')
+            if (filas.length > 1) {
+                cuerpoTabla.removeChild(filas[filas.length - 1])
+            }
+        })
+    </script>
+
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+
+<!-- Aplicación de Contador: Crea una aplicación de contador donde los usuarios pueden aumentar, disminuir y restablecer un contador. Utiliza eventos de clic para manejar las acciones y actualiza dinámicamente el DOM para reflejar el valor actual del contador. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="contador">
+        <button class="aumentar">Aumentar</button>
+        <p class="numero">0</p>
+        <button class="disminuir">Disminuir</button>
+    </div>
+
+</body>
+
+<script>
+
+    let aumentar = document.querySelector('.aumentar')
+    let disminuir = document.querySelector('.disminuir')
+    let numero = document.querySelector('.numero')
+
+    let contador = 0
+
+    function aumentarContador() {
+        contador++
+        numero.textContent = contador
+    }
+
+    function disminuirContador() {
+        contador--
+        numero.textContent = contador
+    }
+
+    aumentar.addEventListener('click', aumentarContador)
+
+    disminuir.addEventListener('click', disminuirContador)
+
+
+
+</script>
+
+</html> -->
+
+
+
+
+
+
+
+
+<!-- Calculadora Interactiva: Desarrolla una calculadora interactiva con botones para números y operadores. Utiliza eventos para manejar las pulsaciones de teclas y actualiza dinámicamente el DOM para mostrar los resultados. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form action=">#">
+        <input type="text" name="resultado" id="resultado">
+        <div class="botones">
+            <button type="button" class="numero">1</button>
+            <button type="button" class="numero">2</button>
+            <button type="button" class="numero">3</button>
+            <button type="button" class="numero">4</button>
+            <button type="button" class="numero">5</button>
+            <button type="button" class="numero">6</button>
+            <button type="button" class="numero">7</button>
+            <button type="button" class="numero">8</button>
+            <button type="button" class="numero">9</button>
+            <button type="button" class="numero">0</button>
+            <button type="button" class="operador">+</button>
+            <button type="button" class="operador">-</button>
+            <button type="button" class="operador">*</button>
+            <button type="button" class="operador">/</button>
+            <button type="button" class="operador">=</button>
+            <button type="button" class="operador">C</button>
+        </div>
+    </form>
+
+</body>
+
+<script>
+
+    let resultado = document.querySelector('#resultado')
+    let numeros = document.querySelectorAll('.numero')
+    let operadores = document.querySelectorAll('.operador')
+
+    let operacion = ''
+    let numero1 = 0
+    let numero2 = 0
+    let resultadoOperacion = 0
+
+    function agregarNumero(event) {
+        let numero = event.target.textContent
+        operacion += numero
+        resultado.value = operacion
+    }
+
+    function agregarOperador(event) {
+        let operador = event.target.textContent
+        if (operador === 'C') {
+            operacion = ''
+            resultado.value = operacion
+        } else if (operador === '=') {
+            let operacionArray = operacion.split('')
+            let operador = operacionArray.find(caracter => isNaN(parseInt(caracter)))
+            let operadorIndex = operacionArray.indexOf(operador)
+            numero1 = parseInt(operacionArray.slice(0, operadorIndex).join(''))
+            numero2 = parseInt(operacionArray.slice(operadorIndex + 1).join(''))
+            if (operador === '+') {
+                resultadoOperacion = numero1 + numero2
+            } else if (operador === '-') {
+                resultadoOperacion = numero1 - numero2
+            } else if (operador === '*') {
+                resultadoOperacion = numero1 * numero2
+            } else if (operador === '/') {
+                resultadoOperacion = numero1 / numero2
+            }
+            resultado.value = resultadoOperacion
+            operacion = resultadoOperacion
+        } else {
+            operacion += operador
+            resultado.value = operacion
+        }
+    }
+
+    numeros.forEach(numero => {
+        numero.addEventListener('click', agregarNumero)
+    })
+
+    operadores.forEach(operador => {
+        operador.addEventListener('click', agregarOperador)
+    })
+
+</script>
+
+</html> -->
+
+
+
+
+
+
+
+
+<!-- Sistema de Comentarios en Tiempo Real: Implementa un sistema de comentarios en tiempo real. Los usuarios pueden agregar comentarios y ver nuevos comentarios sin tener que recargar la página. Utiliza eventos para actualizar dinámicamente el DOM. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form action="#">
+        <input type="text" name="comentario" id="comentario" placeholder="autor">
+        <input type="text" name="autor" id="autor" placeholder="mensaje">
+        <button type="submit">Enviar</button>
+    </form>
+
+</body>
+
+<script>
+
+    let comentario = document.querySelector('#comentario')
+    let autor = document.querySelector('#autor')
+    let form = document.querySelector('form')
+
+    form.addEventListener('submit', (event) => {
+        event.preventDefault()
+        let comentarioValue = comentario.value
+        let autorValue = autor.value
+        let comentarioNuevo = document.createElement('div')
+        comentarioNuevo.textContent = `${autorValue}: ${comentarioValue}`
+        document.body.appendChild(comentarioNuevo)
+        comentario.value = ''
+        autor.value = ''
+    })
+
+
+
+</script>
+
+</html> -->
+
+
+
+
+
+
+
+
+<!-- Aplicación de Encuestas: Diseña una aplicación de encuestas donde los usuarios pueden seleccionar opciones y ver los resultados en tiempo real. Utiliza eventos para gestionar las selecciones y actualiza dinámicamente el DOM. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form action="#">
+        <div class="preguntas">
+            <p>¿Cuál es tu lenguaje de programación favorito?</p>
+            <input type="radio" name="lenguaje" id="javascript" value="javascript">
+            <label for="javascript">Python</label>
+            <input type="radio" name="lenguaje" id="python" value="python">
+            <label for="python">JavaScript</label>
+            <input type="radio" name="lenguaje" id="java" value="java">
+            <label for="java">Java</label>
+            <input type="radio" name="lenguaje" id="c" value="c">
+            <label for="c">Flutter</label>
+        </div>
+        <div class="preguntas">
+            <p>¿Cuál es tu framework de JavaScript favorito?</p>
+            <input type="radio" name="framework" id="react" value="react">
+            <label for="react">Django</label>
+            <input type="radio" name="framework" id="angular" value="angular">
+            <label for="angular">SpringBoot</label>
+            <input type="radio" name="framework" id="vue" value="vue">
+            <label for="vue">React</label>
+            <input type="radio" name="framework" id="svelte" value="svelte">
+            <label for="svelte">Vue</label>
+        </div>
+        <button type="submit">Enviar</button>
+    </form>
+
+</body>
+
+<script>
+
+    let form = document.querySelector('form')
+    let preguntas = document.querySelectorAll('.preguntas')
+
+    let lenguaje = ''
+    let framework = ''
+
+    function agregarLenguaje(event) {
+        lenguaje = event.target.value
+    }
+
+    function agregarFramework(event) {
+        framework = event.target.value
+    }
+
+    preguntas.forEach(pregunta => {
+        pregunta.addEventListener('click', agregarLenguaje)
+        pregunta.addEventListener('click', agregarFramework)
+    })
+
+    form.addEventListener('submit', (event) => {
+        event.preventDefault()
+        let lenguajeSeleccionado = document.createElement('div')
+        lenguajeSeleccionado.textContent = `Lenguaje: ${lenguaje}`
+        let frameworkSeleccionado = document.createElement('div')
+        frameworkSeleccionado.textContent = `Framework: ${framework}`
+        document.body.appendChild(lenguajeSeleccionado)
+        document.body.appendChild(frameworkSeleccionado)
+    })
+
+
+
+</script>
+
+</html> -->
+
+
+
+
+
+
+
+
+<!-- Sistema de Reservas: Crea un sistema de reservas interactivo. Los usuarios pueden seleccionar fechas y horas disponibles, y el sistema debe reflejar dinámicamente las reservas realizadas. Utiliza eventos para gestionar las selecciones y actualiza el DOM en consecuencia. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form id="reservationForm">
+        <input type="date" name="fecha" id="fecha">
+        <input type="time" name="hora" id="hora">
+        <input type="text" name="nombre" id="nombre" placeholder="nombre para reservar">
+        <button type="submit">Enviar</button>
+    </form>
+
+    <div id="reservations"></div>
+
+    <script>
+        const fechaInput = document.querySelector('#fecha');
+        const horaInput = document.querySelector('#hora');
+        const nombreInput = document.querySelector('#nombre');
+        const form = document.querySelector('#reservationForm');
+        const reservationsContainer = document.querySelector('#reservations');
+
+        const reservas = [];
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+
+            const fechaReservada = fechaInput.value;
+            const horaReservada = horaInput.value;
+            const nombreReserva = nombreInput.value;
+
+            const reserva = {
+                fecha: fechaReservada,
+                hora: horaReservada,
+                nombre: nombreReserva
+            };
+
+            reservas.push(reserva)
+
+            const nuevaReservaDiv = document.createElement('div')
+            nuevaReservaDiv.textContent = `Fecha: ${fechaReservada}, Hora: ${horaReservada}, Nombre: ${nombreReserva}`
+            reservationsContainer.appendChild(nuevaReservaDiv)
+
+            form.reset()
+        }
+
+        form.addEventListener('submit', handleFormSubmit)
+    </script>
+
+</body>
+
+</html> -->

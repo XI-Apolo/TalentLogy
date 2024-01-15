@@ -1,0 +1,623 @@
+<!-- Cambio de Color al Hacer Clic: Asigna un event listener a un botón. Cambia el color de fondo de un elemento cuando se hace clic en el botón. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="botonGood">presioname</button>
+    <div id="elemento" style="width: 200px; height: 200px; background-color: blue; margin-top: 20px;"></div>
+</body>
+
+<script>
+    const botonGood = document.getElementById('botonGood') 
+    const element = document.getElementById('elemento') 
+
+    botonGood.addEventListener('click', cambioColor)
+
+    function cambioColor(){
+        element.style.backgroundColor = 'red'
+    }
+</script>
+
+</html> -->
+
+
+
+
+
+
+
+
+<!-- Galería de Imágenes con Navegación: Crea una galería de imágenes con botones "Anterior" y "Siguiente". Cambia la imagen principal al hacer clic en los botones. -->
+
+<!-- este ejercicio se repite en la seccion 4 ejercicio 8 -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #galeria {
+            text-align: center;
+        }
+
+        #imagenPrincipal {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="galeria">
+        <img id="imagenPrincipal" src="./s1.jfif" alt="Imagen 1">
+        <br>
+        <button onclick="anteriorImagen()">Anterior</button>
+        <button onclick="siguienteImagen()">Siguiente</button>
+    </div>
+
+    <script>
+        const imagenes = ['s2.jfif', 's3.jfif', 's4.jfif'];
+        let indiceActual = 0;
+        const imagenPrincipal = document.getElementById('imagenPrincipal');
+
+        function mostrarImagen() {
+            imagenPrincipal.src = imagenes[indiceActual];
+        }
+
+        function anteriorImagen() {
+            if (indiceActual > 0) {
+                indiceActual--;
+            } else {
+                indiceActual = imagenes.length - 1;
+            }
+            mostrarImagen();
+        }
+
+        function siguienteImagen() {
+            if (indiceActual < imagenes.length - 1) {
+                indiceActual++;
+            } else {
+                indiceActual = 0;
+            }
+            mostrarImagen();
+        }
+
+        mostrarImagen();
+    </script>
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+<!-- Toggle de Clase al Hacer Clic: Asigna un event listener a un elemento. Al hacer clic en el elemento, agrega o elimina una clase para cambiar su estilo. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .color {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li id="elemento1">Elemento 1</li>
+        <li id="elemento2">Elemento 2</li>
+        <li id="elemento3">Elemento 3</li>
+    </ul>
+</body>
+
+<script>
+
+    let elemento1 = document.getElementById('elemento1')
+    let elemento2 = document.getElementById('elemento2')
+    let elemento3 = document.getElementById('elemento3')
+
+    elemento1.addEventListener('click', cambioColor)
+    elemento2.addEventListener('click', cambioColor)
+    elemento3.addEventListener('click', cambioColor)
+
+    function cambioColor(e) {
+        e.target.classList.toggle('color')
+    }
+
+
+</script>
+
+</html> -->
+
+
+
+
+
+
+
+
+<!-- Desplazamiento a Secciones: Crea un menú de navegación. Asigna event listeners a los elementos del menú para desplazarse suavemente a las secciones correspondientes al hacer clic. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <nav class="menu">
+        <ul>
+            <li><a href="#seccion1">Sección 1</a></li>
+            <li><a href="#seccion2">Sección 2</a></li>
+            <li><a href="#seccion3">Sección 3</a></li>
+        </ul>
+    </nav>
+
+    <section id="seccion1">
+        <h3>Seccion 1</h3>
+        <p>Amet dolore qui reprehenderit magna nulla proident est ad excepteur consequat. Ut pariatur adipisicing
+            consectetur consequat proident Lorem magna elit laborum id quis. Dolore amet proident velit fugiat proident
+            labore est aliqua. Excepteur proident dolor ipsum cillum laborum magna sunt cillum eiusmod eiusmod ipsum
+            aute. Voluptate pariatur consectetur fugiat sit.
+
+            Deserunt mollit enim velit enim commodo deserunt elit sunt elit cupidatat. Sit reprehenderit aliquip fugiat
+            eu magna ad quis deserunt reprehenderit ullamco voluptate. Duis dolor incididunt culpa dolore id mollit anim
+            pariatur commodo cillum dolor. Eiusmod ipsum esse ut eu do aliquip aliquip qui minim adipisicing. Aliquip
+            proident pariatur laborum mollit. Esse commodo officia do esse proident cillum nostrud occaecat. Fugiat
+            ipsum consectetur ea eu irure nisi duis in incididunt duis nostrud labore aute.
+
+            Exercitation laborum Lorem anim dolore dolore laboris ad aliqua. Adipisicing sunt minim commodo enim
+            incididunt aliquip dolore laboris magna amet velit aute. Velit voluptate qui ipsum in. Irure velit labore
+            occaecat officia commodo esse duis elit mollit duis est voluptate.
+
+            Labore nisi est irure est aliquip dolore veniam excepteur minim aliquip duis. Aliquip eiusmod dolor
+            consectetur sit veniam sint ipsum culpa laborum veniam. Est proident exercitation do ut cupidatat nulla amet
+            labore incididunt laborum commodo.
+
+            Commodo excepteur eu eu tempor reprehenderit quis consequat qui velit aliquip laborum ea. Officia veniam
+            sunt do laboris consectetur excepteur aliquip dolor veniam voluptate irure consectetur aliqua. Cupidatat
+            aliqua duis occaecat fugiat.
+
+            Tempor Lorem eu non ullamco duis ex laboris exercitation proident qui. Occaecat pariatur voluptate quis
+            reprehenderit duis ipsum. Laboris cillum ea nisi Lorem tempor. Laborum tempor esse reprehenderit id culpa
+            proident eu mollit aliqua commodo quis eu. Est ipsum enim cupidatat ad amet exercitation ad aute eiusmod
+            cupidatat. Est in tempor duis exercitation dolore sunt cillum qui irure est velit irure est. Aliquip ipsum
+            sint et non et laboris commodo eiusmod.
+
+            Aliquip eiusmod occaecat culpa velit ea veniam sunt culpa ullamco eu duis non. Lorem duis sit minim officia
+            mollit qui sit laboris. Labore commodo velit consequat enim eu nisi Lorem id ex amet reprehenderit aliquip
+            dolor. Ipsum excepteur eiusmod ullamco ea irure do officia consectetur veniam. Eu aliqua labore amet
+            voluptate esse aliquip aute amet aliqua pariatur id quis. Incididunt duis qui duis amet.</p>
+    </section>
+
+    <section id="seccion2">
+        <h3>Seccion 2</h3>
+        <p>Sunt anim velit in cillum fugiat aute duis minim irure fugiat velit consectetur laborum. Laboris irure
+            commodo reprehenderit duis. Nostrud consequat in est sint.
+
+            Aliqua incididunt ipsum proident in non. Velit eiusmod ut aliqua adipisicing ad excepteur magna voluptate
+            esse. Consectetur eiusmod quis adipisicing ad sit ea ea nulla cupidatat ipsum. Lorem aute commodo incididunt
+            sunt proident non officia aliqua sit ut magna ex. Duis veniam laboris elit quis non et eiusmod deserunt
+            velit mollit in tempor excepteur adipisicing. Incididunt tempor esse consequat ex ex. Est excepteur sint
+            cupidatat proident commodo incididunt nostrud magna dolore ut nulla.
+
+            Officia in dolore aute cupidatat incididunt do laboris exercitation sunt. Sunt irure Lorem labore dolore eu
+            labore. Ipsum deserunt irure do amet do minim.
+
+            Voluptate sunt in ullamco minim excepteur velit est eu ipsum. Est sunt aliqua minim est. Qui reprehenderit
+            tempor occaecat ea consequat irure officia. Do nulla quis duis veniam adipisicing cillum sit reprehenderit
+            labore eiusmod elit qui. Ea occaecat sit duis sit dolore ullamco ex reprehenderit laboris elit ad aute.
+            Pariatur fugiat ad adipisicing officia aliquip.
+
+            Consectetur ullamco laboris Lorem cupidatat qui dolore non anim mollit officia commodo esse elit. Aliqua
+            excepteur ad aliqua enim irure eiusmod laborum dolore cupidatat mollit cillum id. In laboris quis quis qui
+            dolore.
+
+            Magna officia nulla fugiat nulla anim labore exercitation laboris incididunt commodo nostrud. Incididunt
+            labore reprehenderit duis consectetur irure do anim ullamco cupidatat nulla veniam aute id reprehenderit.
+            Sit enim nisi incididunt reprehenderit minim velit mollit irure occaecat anim occaecat sit nostrud. Eu anim
+            eu nostrud est nulla non cupidatat magna nisi.
+
+            Qui proident irure enim eiusmod Lorem commodo quis do sit exercitation aliqua voluptate incididunt nostrud.
+            Labore tempor ex sunt veniam officia. Exercitation elit deserunt mollit aute officia et. Non aliqua
+            reprehenderit consequat velit minim nulla id reprehenderit duis excepteur magna irure consectetur ad.
+            Proident magna ex tempor enim non aute irure commodo consectetur est exercitation. Fugiat adipisicing est
+            eiusmod Lorem officia amet veniam Lorem. Proident minim ullamco occaecat ipsum laboris fugiat nisi id
+            officia id dolore eu.</p>
+    </section>
+
+    <section id="seccion3">
+        <h3>Seccion 3</h3>
+        <p>Eu consectetur incididunt tempor consequat ullamco ea culpa exercitation. Dolore adipisicing ipsum pariatur
+            in labore velit pariatur dolor non minim in. Dolor duis cupidatat voluptate enim tempor fugiat tempor et. Id
+            proident et adipisicing tempor culpa. Occaecat ad commodo ullamco ipsum aliquip ex laboris dolor non eu quis
+            aliqua et est.
+
+            Eiusmod eiusmod aliqua est minim deserunt duis Lorem sunt officia. Qui fugiat eiusmod laboris tempor mollit
+            ipsum aute. Qui aute dolor exercitation excepteur reprehenderit culpa sint ullamco sit qui quis qui.
+            Reprehenderit cupidatat adipisicing cillum sit eu exercitation. Dolor ut non nostrud nulla voluptate
+            reprehenderit adipisicing pariatur laboris. Magna occaecat exercitation incididunt excepteur velit id
+            commodo qui qui in consectetur. Dolor aute duis non deserunt labore aute consectetur sunt sit reprehenderit
+            commodo amet incididunt.
+
+            Deserunt aliqua voluptate eu amet non nisi excepteur irure sunt enim consequat cupidatat et laborum. Amet
+            aute est ut proident dolore do aliqua excepteur commodo sint minim ullamco. Aliqua ut mollit magna minim
+            aute consequat aute veniam.
+
+            Pariatur nostrud do pariatur consequat aliqua nulla consequat velit. Magna sunt non laboris dolore
+            consectetur cillum do id. Culpa sint reprehenderit aute ipsum ut pariatur consectetur anim dolore qui amet.
+            Irure ipsum Lorem eu adipisicing. Consectetur pariatur ut proident ullamco cillum et ipsum deserunt eiusmod.
+
+            Cillum ipsum sit ut labore sit aliquip nulla ipsum excepteur labore. Commodo quis pariatur esse minim. Esse
+            dolore fugiat voluptate et deserunt do.
+
+            Dolor quis qui ullamco Lorem. Commodo ex veniam proident cillum duis cupidatat Lorem non duis in occaecat
+            enim. Dolore dolor nostrud aliqua laborum irure nulla labore elit labore consectetur sint ut quis.
+
+            Ea proident officia amet deserunt nulla enim nostrud veniam. Eiusmod irure sint ex amet aliqua aute esse
+            quis dolor et. Fugiat minim eiusmod ad eiusmod. Ad dolor sunt ea elit adipisicing Lorem sint ex aute sunt
+            irure commodo fugiat. Est excepteur consequat cillum amet incididunt aliqua esse reprehenderit exercitation
+            do voluptate amet dolor. Consectetur aliquip occaecat amet pariatur aliquip et ad.</p>
+    </section>
+</body>
+
+<script>
+    let menu = document.querySelectorAll('a')
+
+    menu.forEach(element => {
+        element.addEventListener('click', desplazamiento)
+    })
+
+    function desplazamiento(e) {
+        e.preventDefault()
+        let seccion = document.querySelector(e.target.attributes.href.value)
+        seccion.scrollIntoView({
+            behavior: 'smooth'
+        })
+    }
+
+
+</script>
+
+</html> -->
+
+
+
+
+
+
+
+
+<!-- Arrastrar y Soltar: Implementa la funcionalidad de arrastrar y soltar para un elemento. Actualiza su posición en la página al soltarlo. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .hover {
+            background-color: #9c9c9c;
+        }
+    </style>
+</head>
+
+<body>
+
+    <ul>
+        <li id="elemento1" draggable="true">Elemento 1</li>
+        <li id="elemento2" draggable="true">Elemento 2</li>
+        <li id="elemento3" draggable="true">Elemento 3</li>
+    </ul>
+
+    <script>
+        let elementos = document.querySelectorAll('li');
+
+        elementos.forEach(elemento => {
+            elemento.addEventListener('dragstart', dragStart);
+            elemento.addEventListener('dragend', dragEnd);
+        });
+
+        function dragStart(e) {
+            e.dataTransfer.setData('text', e.target.id);
+        }
+
+        function dragEnd(e) {
+            console.log('drag end');
+        }
+
+        function dragOver(e) {
+            e.preventDefault();
+        }
+
+        function dragEnter(e) {
+            e.preventDefault();
+            this.classList.add('hover');
+        }
+
+        function dragLeave() {
+            this.classList.remove('hover');
+        }
+
+        function drop(e) {
+            e.preventDefault();
+            let data = e.dataTransfer.getData('text');
+            this.appendChild(document.getElementById(data));
+            this.classList.remove('hover');
+        }
+
+        elementos.forEach(elemento => {
+            elemento.addEventListener('dragover', dragOver);
+            elemento.addEventListener('dragenter', dragEnter);
+            elemento.addEventListener('dragleave', dragLeave);
+            elemento.addEventListener('drop', drop);
+        });
+    </script>
+
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+
+<!-- Temporizador con Eventos: Crea un temporizador que comienza a contar cuando se carga la página. Muestra una alerta al llegar a cero. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="temporizador">10</div>
+</body>
+
+<script>
+    let temporizador = document.querySelector('.temporizador')
+    let tiempo = 10
+
+    setInterval(() => {
+        tiempo--
+        temporizador.innerHTML = tiempo
+        if (tiempo === 0) {
+            alert('tiempo terminado')
+        }
+    }, 1000);
+
+
+</script>
+
+</html> -->
+
+
+
+
+
+
+
+
+<!-- Lista de Tareas Interactiva: Crea una lista de tareas con checkboxes. Utiliza event listeners para marcar y desmarcar las tareas como completadas. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .completado {
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>tarea 1</li>
+        <li>tarea 2</li>
+        <li>tarea 3</li>
+    </ul>
+</body>
+
+<script>
+    let tareas = document.querySelectorAll('li')
+
+    tareas.forEach(tarea => {
+        tarea.addEventListener('click', completarTarea)
+    })
+
+    function completarTarea(e) {
+        e.target.classList.toggle('completado')
+    }
+</script>
+
+</html> -->
+
+
+
+
+
+
+
+
+<!-- Respuestas Interactivas a Teclas: Cambia el color de fondo de una página web cuando se presionan ciertas teclas. Restaura el color original cuando se sueltan las teclas. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            background-color: #9c9c9c;
+        }
+    </style>
+</head>
+
+<body>
+
+</body>
+
+<script>
+    let body = document.querySelector('body')
+
+    body.addEventListener('keydown', cambioColor)
+    body.addEventListener('keyup', cambioColor)
+
+    function cambioColor(e) {
+        if (e.type === 'keydown') {
+            body.style.backgroundColor = 'red'
+        } else {
+            body.style.backgroundColor = '#9c9c9c'
+        }
+    }
+</script>
+
+</html> -->
+
+
+
+
+
+
+
+
+<!-- Efecto Parallax al Desplazarse: Implementa un efecto parallax en un elemento mientras se desplaza por la página. Ajusta la velocidad del parallax según el desplazamiento. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Ubuntu', sans-serif;
+            line-height: 180%;
+            color: #303030;
+            text-align: center;
+        }
+
+        .parallax1 {
+            background-image: url('px.jpg');
+            min-height: 70%;
+        }
+
+        .parallax2 {
+            background-image: url('px2.png');
+            min-height: 60%;
+        }
+
+        .parallax3 {
+            background-image: url('px3.jpg');
+            min-height: 40%;
+        }
+
+
+
+        .parallax1,
+        .parallax2,
+        .parallax3{
+            position: relative;
+            opacity: 0.70;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        section {
+            overflow: auto;
+            padding: 50px 80px;
+
+        }
+
+
+        @keyframes drop {
+            0% {
+                opacity: 0;
+                transform: translateY(-80px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0px);
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="parallax1">
+    </div>
+    <section>
+        <h1>holaaaaaaaaaaa</h1>
+
+    </section>
+
+    <div class="parallax2">
+
+
+    </div>
+    <section>
+        <h1>Miraaaaaaaa</h1>
+    </section>
+    <div class="parallax3">
+
+    </div>
+    <div>
+        <section>
+            <h1>Adioson</h1>
+        </section>
+
+    </div>
+
+
+</body>
+
+</html> -->
